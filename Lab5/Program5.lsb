@@ -1,0 +1,336 @@
+
+GNAT GPL 2014 (20140331)
+Copyright 1992-2014, Free Software Foundation, Inc.
+
+
+Compiling: c:/users/pramesh/desktop/cosc33~1/lab5/program5.adb (source file time stamp: 2015-05-01 01:22:04)
+
+     1. --Parameshor Bhandari
+     2. --CS3319 Data Structure
+     3. --Lab 5
+     4. --A Option
+     5. --Dr. Burris
+     6.
+     7. WITH Ada.Text_IO; USE Ada.Text_IO;
+     8.
+     9. WITH HashTable;
+    10.
+    11.
+    12. PROCEDURE Program5 IS
+    13.
+    14.
+    15.    PACKAGE Iio IS NEW Ada.Text_IO.Integer_IO(Integer); USE Iio;
+    16.
+    17.    PACKAGE Fio IS NEW Ada.Text_IO.Float_IO(Float); USE Fio;
+    18.
+    19.    TYPE String16 IS ARRAY(1..16) OF Character;
+    20.
+    21.
+    22.    PROCEDURE String16_Put(X: IN String16) IS
+    23.
+    24.    BEGIN
+    25.
+    26.       Ada.Text_IO.Put(String(X));
+    27.
+    28.    END String16_Put;
+    29.
+    30.
+    31.
+    32.    PROCEDURE String16_Key(X: IN String16; Y: OUT String) IS
+    33.
+    34.    BEGIN
+    35.
+    36.       Y:=String(X);
+    37.
+    38.    END String16_Key;
+    39.
+    40.
+    41.    PACKAGE Hashtbl IS NEW HashTable(String16,256,String16_Put,String16_Key); USE Hashtbl;
+    42.
+    43.    Removed_Item: CONSTANT String16:=" &&&            ";
+    44.
+    45.    Null_Item: CONSTANT String16:="                ";
+    46.
+    47.
+    48.    WordsFile:File_Type;
+    49.
+    50.    Tempkey:String(1..16);
+    51.
+    52.    Tempkeylen:Integer;
+    53.
+    54.
+    55.    Min:Integer;
+    56.
+    57.    Max:Integer;
+    58.
+    59.    Avg:Float;
+    60.
+    61.
+    62. BEGIN
+    63.
+    64.
+    65.    Hashtbl.Initialize(0,Null_Item,Removed_Item);
+    66.
+    67.    --50% of a table size of 256 is 128 items. insertting first 128 items from Words200D16.txt
+    68.    Open(WordsFile,In_File,"Words200D16.txt");
+    69.
+    70.    FOR I IN 1..128 LOOP
+    71.       IF End_Of_File(WordsFile) THEN
+    72.          Put_Line("Words200D16.txt is shorter than expected. It may be corrupt.");
+    73.          Exit;
+    74.       End If;
+    75.       Get_line(WordsFile,tempkey,tempkeylen);
+    76.       Skip_Line(WordsFile);
+    77.       insert(tempkey,string16(tempkey));
+    78.    End Loop;
+    79.    Close(WordsFile);
+    80.
+    81. 	--Perform a lookup on the first 30 keys inserted into the table.
+    82. 	--Ada's file input requires me to close the file and reopen it in order to go back to line 1
+    83.    Open(WordsFile,In_File,"Words200D16.txt");
+    84.    For i In 1..30 Loop
+    85.       If End_Of_File(WordsFile) Then
+    86.          Put_Line("Words200D16.txt is shorter than expected. It may be corrupt.");
+    87.          Exit;
+    88.       End If;
+    89.       Get_line(WordsFile,tempkey,tempkeylen);
+    90.       Skip_Line(WordsFile);
+    91.       hashtbl.get(tempkey,string16(tempkey));
+    92.    End Loop;
+    93.    Close(WordsFile);
+    94.
+    95.    Put_Line("Statistics for Part A (Linear Probe at 50% full)");
+    96.    Put_Line("Statistics of first 30 lookups:");
+    97.    getMinProbes(min); getMaxProbes(max); getAvgProbes(avg);
+    98.    put("Min probes: ");put(min);put_line("");
+    99.    put("Max probes: ");put(max);put_line("");
+   100.    put("Avg probes: ");put(avg);put_line("");
+   101.    put_line("");
+   102.
+   103. 	--Perform a lookup on the last 30 keys inserted into the table (128-30=98) (starting at line 98)
+   104.    Put_Line("Resetting statistics counters..."); resetStatistics;
+   105.    Open(WordsFile,In_File,"Words200D16.txt");
+   106.    Set_Line(WordsFile,128);
+   107.    For i In 1..30 Loop
+   108.       If End_Of_File(WordsFile) Then
+   109.          Exit;
+   110.       End If;
+   111.       Get_line(WordsFile,tempkey,tempkeylen);
+   112.       Skip_Line(WordsFile);
+   113.       hashtbl.get(tempkey,string16(tempkey));
+   114.    End Loop;
+   115.    Close(WordsFile);
+   116.
+   117.    Put_Line("Statistics of last 30 lookups:");
+   118.    getMinProbes(min); getMaxProbes(max); getAvgProbes(avg);
+   119.    put("Min probes: ");put(min);put_line("");
+   120.    put("Max probes: ");put(max);put_line("");
+   121.    put("Avg probes: ");put(avg);put_line("");
+   122.    put_line("");
+   123.
+   124. 	--Printing table for part A of grading option C.
+   125.    Put_Line("Table for Part A (Linear Probe at 50% full)");
+   126.    printTable;
+   127.    put_line("");
+   128.
+   129. 	--Clearing table for Part B of grading option C.
+   130.    hashtbl.initialize(0,null_item,removed_item);
+   131.
+   132. 	--85% of a table size of 256 is 217.6 items. insertting first 218 items from Words200D16.txt
+   133.    Open(WordsFile,In_File,"Words200D16.txt");
+   134.    For i In 1..218 Loop
+   135.       If End_Of_File(WordsFile) Then
+   136.          Put_Line("Words200D16.txt is shorter than expected. It may be corrupt.");
+   137.          Exit;
+   138.       End If;
+   139.       Get_line(WordsFile,tempkey,tempkeylen);
+   140.       Skip_Line(WordsFile);
+   141.       insert(tempkey,string16(tempkey));
+   142.    End Loop;
+   143.    Close(WordsFile);
+   144.
+   145. 	--Perform a lookup on the first 30 keys inserted into the table.
+   146. 	--Ada's file input requires me to close the file and reopen it in order to go back to line 1
+   147.    Open(WordsFile,In_File,"Words200D16.txt");
+   148.    For i In 1..30 Loop
+   149.       If End_Of_File(WordsFile) Then
+   150.          Put_Line("Words200D16.txt is shorter than expected. It may be corrupt.");
+   151.          Exit;
+   152.       End If;
+   153.       Get_line(WordsFile,tempkey,tempkeylen);
+   154.       Skip_Line(WordsFile);
+   155.       hashtbl.get(tempkey,string16(tempkey));
+   156.    End Loop;
+   157.    Close(WordsFile);
+   158.
+   159.    put_line("Statistics for Part B (Linear Probe at 85% full)");
+   160.
+   161.    Put_Line("Statistics of first 30 lookups:");
+   162.    getMinProbes(min); getMaxProbes(max); getAvgProbes(avg);
+   163.    put("Min probes: ");put(min);put_line("");
+   164.    put("Max probes: ");put(max);put_line("");
+   165.    put("Avg probes: ");put(avg);put_line("");
+   166.    put_line("");
+   167.
+   168. 	--Perform a lookup on the last 30 keys inserted into the table (218-30=188) (starting at line 188)
+   169.    Put_Line("Resetting statistics counters..."); resetStatistics;
+   170.    Open(WordsFile,In_File,"Words200D16.txt");
+   171.    Set_Line(WordsFile,188);
+   172.    For i In 1..30 Loop
+   173.       If End_Of_File(WordsFile) Then
+   174.          Exit;
+   175.       End If;
+   176.       Get_line(WordsFile,tempkey,tempkeylen);
+   177.       Skip_Line(WordsFile);
+   178.       hashtbl.get(tempkey,string16(tempkey));
+   179.    End Loop;
+   180.    Close(WordsFile);
+   181.
+   182.    Put_Line("Statistics of last 30 lookups:");
+   183.    getMinProbes(min); getMaxProbes(max); getAvgProbes(avg);
+   184.    put("Min probes: ");put(min);put_line("");
+   185.    put("Max probes: ");put(max);put_line("");
+   186.    put("Avg probes: ");put(avg);put_line("");
+   187.    put_line("");
+   188.
+   189. 	--Printing table for part B of grading option C.
+   190.    Put_Line("Table for Part B (Linear Probe at 85% full)");
+   191.    printTable;
+   192.    put_line("");
+   193.
+   194. 	--Switching to random probe collision handling
+   195.    hashtbl.initialize(1,null_item,removed_item);
+   196.    Put_Line("Hashing collision handler set for random probe. (Part C)");
+   197.
+   198. 	--50% of a table size of 256 is 128 items. insertting first 128 items from Words200D16.txt
+   199.    Open(WordsFile,In_File,"Words200D16.txt");
+   200.    For i In 1..128 Loop
+   201.       If End_Of_File(WordsFile) Then
+   202.          Put_Line("Words200D16.txt is shorter than expected. It may be corrupt.");
+   203.          Exit;
+   204.       End If;
+   205.       Get_line(WordsFile,tempkey,tempkeylen);
+   206.       Skip_Line(WordsFile);
+   207.       insert(tempkey,string16(tempkey));
+   208.    End Loop;
+   209.    Close(WordsFile);
+   210.
+   211. 	--Perform a lookup on the first 30 keys inserted into the table.
+   212. 	--Ada's file input requires me to close the file and reopen it in order to go back to line 1
+   213.    Open(WordsFile,In_File,"Words200D16.txt");
+   214.    For i In 1..30 Loop
+   215.       If End_Of_File(WordsFile) Then
+   216.          Put_Line("Words200D16.txt is shorter than expected. It may be corrupt.");
+   217.          Exit;
+   218.       End If;
+   219.       Get_line(WordsFile,tempkey,tempkeylen);
+   220.       Skip_Line(WordsFile);
+   221.       hashtbl.get(tempkey,string16(tempkey));
+   222.    End Loop;
+   223.    Close(WordsFile);
+   224.
+   225.    put_line("Statistics for Part C (Random Probe at 50% full)");
+   226.
+   227.    Put_Line("Statistics of first 30 lookups:");
+   228.    getMinProbes(min); getMaxProbes(max); getAvgProbes(avg);
+   229.    put("Min probes: ");put(min);put_line("");
+   230.    put("Max probes: ");put(max);put_line("");
+   231.    put("Avg probes: ");put(avg);put_line("");
+   232.    put_line("");
+   233.
+   234. 	--Perform a lookup on the last 30 keys inserted into the table (128-30=98) (starting at line 98)
+   235.    Put_Line("Resetting statistics counters..."); resetStatistics;
+   236.    Open(WordsFile,In_File,"Words200D16.txt");
+   237.    Set_Line(WordsFile,98);
+   238.    For i In 1..30 Loop
+   239.       If End_Of_File(WordsFile) Then
+   240.          Exit;
+   241.       End If;
+   242.       Get_line(WordsFile,tempkey,tempkeylen);
+   243.       Skip_Line(WordsFile);
+   244.       hashtbl.get(tempkey,string16(tempkey));
+   245.    End Loop;
+   246.    Close(WordsFile);
+   247.
+   248.    Put_Line("Statistics of last 30 lookups:");
+   249.    getMinProbes(min); getMaxProbes(max); getAvgProbes(avg);
+   250.    put("Min probes: ");put(min);put_line("");
+   251.    put("Max probes: ");put(max);put_line("");
+   252.    put("Avg probes: ");put(avg);put_line("");
+   253.    put_line("");
+   254.
+   255. 	--Printing table for part A of grading option C.
+   256.    Put_Line("Table for Part C (Random Probe at 50% full)");
+   257.    printTable;
+   258.    put_line("");
+   259.
+   260. 	--Clearing table for Part B of grading option C.
+   261.    hashtbl.initialize(1,null_item,removed_item);
+   262.
+   263. 	--85% of a table size of 265 is 217.6 items. insertting first 218 items from Words200D16.txt
+   264.    Open(WordsFile,In_File,"Words200D16.txt");
+   265.    For i In 1..218 Loop
+   266.       If End_Of_File(WordsFile) Then
+   267.          Put_Line("Words200D16.txt is shorter than expected. It may be corrupt.");
+   268.          Exit;
+   269.       End If;
+   270.       Get_line(WordsFile,tempkey,tempkeylen);
+   271.       Skip_Line(WordsFile);
+   272.       insert(tempkey,string16(tempkey));
+   273.    End Loop;
+   274.    Close(WordsFile);
+   275.
+   276. 	--Perform a lookup on the first 30 keys inserted into the table.
+   277. 	--Ada's file input requires me to close the file and reopen it in order to go back to line 1
+   278.    Open(WordsFile,In_File,"Words200D16.txt");
+   279.    For i In 1..30 Loop
+   280.       If End_Of_File(WordsFile) Then
+   281.          Put_Line("Words200D16.txt is shorter than expected. It may be corrupt.");
+   282.          Exit;
+   283.       End If;
+   284.       Get_line(WordsFile,tempkey,tempkeylen);
+   285.       Skip_Line(WordsFile);
+   286.       hashtbl.get(tempkey,string16(tempkey));
+   287.    End Loop;
+   288.    Close(WordsFile);
+   289.
+   290.    put_line("Statistics for Part C (Random Probe at 85% full)");
+   291.
+   292.    Put_Line("Statistics of first 30 lookups:");
+   293.    getMinProbes(min); getMaxProbes(max); getAvgProbes(avg);
+   294.    put("Min probes: ");put(min);put_line("");
+   295.    put("Max probes: ");put(max);put_line("");
+   296.    put("Avg probes: ");put(avg);put_line("");
+   297.    put_line("");
+   298.
+   299. 	--Perform a lookup on the last 30 keys inserted into the table (218-30=188) (starting at line 188)
+   300.    Put_Line("Resetting statistics counters..."); resetStatistics;
+   301.    Open(WordsFile,In_File,"Words200D16.txt");
+   302.    Set_Line(WordsFile,188);
+   303.    For i In 1..30 Loop
+   304.       If End_Of_File(WordsFile) Then
+   305.          Exit;
+   306.       End If;
+   307.       Get_line(WordsFile,tempkey,tempkeylen);
+   308.       Skip_Line(WordsFile);
+   309.       hashtbl.get(tempkey,string16(tempkey));
+   310.    End Loop;
+   311.    Close(WordsFile);
+   312.
+   313.    Put_Line("Statistics of last 30 lookups:");
+   314.    getMinProbes(min); getMaxProbes(max); getAvgProbes(avg);
+   315.    put("Min probes: ");put(min);put_line("");
+   316.    put("Max probes: ");put(max);put_line("");
+   317.    put("Avg probes: ");put(avg);put_line("");
+   318.    put_line("");
+   319.
+   320. 	--Printing table for part B of grading option C.
+   321.    Put_Line("Table for Part C (Random Probe at 85% full)");
+   322.    printTable;
+   323.    put_line("");
+   324.
+   325.
+   326. End Program5;
+   327.
+
+ 327 lines: No errors

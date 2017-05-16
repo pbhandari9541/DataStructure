@@ -1,0 +1,198 @@
+--Parameshor Bhandari
+--COSC3319 Data Structure
+--Lab 2
+--A option
+--03/06/2015
+
+WITH Ada.Text_IO; USE Ada.Text_IO;
+
+
+PACKAGE BODY GenericStack IS
+
+
+   PACKAGE Iio IS NEW Ada.Text_IO.Integer_IO(Integer); USE Iio;
+   PACKAGE Fio IS NEW Ada.Text_IO.Float_IO(Float); USE Fio;
+
+
+   StackSpace: ARRAY(LeftBound..RightBound) OF Item;
+   Base: ARRAY(1..(NumStacks+1)) OF Integer;
+   OldTop: ARRAY(1..NumStacks+1) OF Integer;
+   Top: ARRAY(1..NumStacks) OF Integer;
+
+   MinSpace: Integer:= Integer ( Float'Ceiling( Float(Size ) * 0.10) );
+
+   PROCEDURE Push(X: IN Item; Stk: IN Positive; Exception_Result: OUT Boolean) IS
+
+   BEGIN
+      Top(Stk) := Top(Stk) + 1;
+      IF Top(Stk) > Base(Stk+ 1) THEN
+         --Start repacking
+         Put_Line("");
+         PrintTopsAndBottoms;
+         PrintContents;
+         Put_Line("Repacking...");
+         Repack(Stk, Exception_Result);
+
+         IF Exception_Result = True THEN
+            Put_Line("Overflow. No room to repack.");
+            --No room to repack, so deallocate the previous space.
+            Top(Stk) := Top(Stk) - 1;
+            PrintTopsAndBottoms;
+            PrintContents;
+         ELSE
+            Put_Line("Done repacking!");
+            PrintTopsAndBottoms;
+            --PrintContents;
+            StackSpace(Top(Stk)) := X;
+            PrintContents;
+
+         END IF;
+      ELSE
+         StackSpace(Top(Stk)) := X;
+         Exception_Result := False;
+      END IF;
+   END Push;
+
+
+   PROCEDURE Pop(X: OUT Item; Stk: IN Positive; Exception_Result: OUT Boolean) IS
+
+   BEGIN
+      IF Top(Stk) = Base(Stk) THEN
+         Exception_Result := True;
+      ELSE
+         X := StackSpace(Top(Stk));
+         Top(Stk) := Top(Stk) - 1;
+         Exception_Result := False;
+      END IF;
+   END Pop;
+
+   PROCEDURE Repack(CurStack: IN Positive; Exception_Repack: OUT Boolean) IS
+
+      EqualAllocate: Float:= 0.09;--Percentage to allocate equally
+      GrowthAllocate: Float:= 1.0-EqualAllocate;--Percentage to allocate to growing stacks
+      AvailSpace:Integer;
+      TotalInc:Integer;
+      J:Integer;
+      Alpha:Float; Beta:Float;
+      Sigma:Float:=0.0;
+      Tau:Float;
+      Delta1:Integer;
+
+   BEGIN
+      --calculate the amount of available space for reallocation
+      --TotalInc is the total growth since last time memory overflowed
+      AvailSpace := Size; TotalInc := 0; J := NumStacks;
+      WHILE J > 0 LOOP
+         AvailSpace := AvailSpace - (Top(J) - Base(J));
+         IF Top(J) > OldTop(J) THEN
+            OldTop(J):= Top(J) - OldTop(J);
+            TotalInc := TotalInc + OldTop(J);
+         ELSE
+            OldTop(J) := 0;
+         END IF;
+         J := J - 1;
+      END LOOP;
+
+      --check if we can repack with AvailSpace left
+      IF AvailSpace < (MinSpace - 1) THEN
+         Put_Line("Insufficient memory to repack");
+         Exception_Repack:=True;
+      ELSE
+         --calculate equal space amount
+         Alpha := EqualAllocate * Float(AvailSpace) / Float(NumStacks);
+
+         --calculate growth space amount
+         Beta := GrowthAllocate * (Float(AvailSpace) / Float(TotalInc));
+
+         --calculate new bases for stacks
+         --J := OldTop(1);
+         OldTop(1) := Base(1);
+         FOR K IN 2..NumStacks LOOP
+            Tau := Sigma + Alpha + (Float(OldTop(K-1)) * Beta);
+           --J := OldTop(K);
+            OldTop(K) := Integer( Float( OldTop(K-1)+(Top(K-1)-Base(K-1)) ) + Float'Floor(Tau) - Float'Floor(Sigma) );
+            Sigma := Tau;
+         END LOOP;
+
+         Top(CurStack) := Top(CurStack) - 1;
+
+         -- Moving the content of the stack
+         -- Moving all stacks down first
+         FOR J IN 2..NumStacks LOOP
+            IF OldTop(J) < Base(J) THEN
+               Delta1 := Base(J) - OldTop(J);
+               FOR L IN (Base(J)+1)..Top(J) LOOP
+                  StackSpace(L - Delta1) := StackSpace(L);
+               END LOOP;
+               Base(J) := OldTop(J);
+               Top(J) := Top(J) - Delta1;
+            END IF;
+         END LOOP;
+
+         --Moving all stacks up without overlaping any stacks
+         FOR J IN 2..NumStacks LOOP
+            IF OldTop(J) > Base(J) THEN
+               Delta1 := OldTop(J) - Base(J);
+               FOR L IN REVERSE (Base(J)+1)..Top(J) LOOP
+                  StackSpace(L + Delta1) := StackSpace(L);
+               END LOOP;
+               Base(J) := OldTop(J);
+               Top(J) := Top(J) + Delta1;
+            END IF;
+         END LOOP;
+
+         Top(CurStack) := Top(CurStack) + 1;
+         --Get ready for next potential overflow
+         FOR J IN 1..NumStacks LOOP
+            OldTop(J) := Top(J);
+         END LOOP;
+         Exception_Repack := False;
+      END IF;
+   END Repack;
+
+   PROCEDURE SetMinSpace(Min: IN Positive) IS
+
+   BEGIN
+      MinSpace:=Min;
+   END SetMinSpace;
+
+   PROCEDURE PrintContents IS
+
+   BEGIN
+      Put_Line("Printing Used Contents of StackSpace:");
+      FOR I IN 1..NumStacks LOOP
+         Put("   Stack ");Put(I,0);Put_Line("");
+         FOR J IN (Base(I)+1)..Top(I) LOOP
+            Put("      ");Put(J,2);Put(" ");Put(StackSpace(J));Put_Line("");
+         END LOOP;
+      END LOOP;
+   END PrintContents;
+
+   PROCEDURE PrintTopsAndBottoms IS
+
+   BEGIN
+      Put("Bases are: ");
+      FOR I IN 1..(NumStacks+1) LOOP
+         Put(Base(I),0);Put(" ");
+      END LOOP;
+      Put("   Tops are: ");
+      FOR I IN 1..NumStacks LOOP
+         Put(Top(I),0);Put(" ");
+      END LOOP;
+      Put("   OldTops are: ");
+      FOR I IN 1..NumStacks LOOP
+         Put(OldTop(I),0);Put(" ");
+      END LOOP;
+      Put_Line("");
+   END PrintTopsAndBottoms;
+
+BEGIN
+   FOR J IN 1..NumStacks LOOP
+      Base(J) := Integer(Float'Floor((Float(J - 1) / Float(NumStacks)) * Float((Size+L0 +1)))) + (L0);
+      Top(J) := Base(J);
+      OldTop(J) := Top(J);
+   END LOOP;
+   Base(NumStacks + 1) := Size +L0 ;
+END GenericStack;
+
+

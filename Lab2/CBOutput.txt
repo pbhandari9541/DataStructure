@@ -1,0 +1,400 @@
+---C/B OPTION DATA OUTPUT----
+
+Enter the type of data i.e Character , Date or quit:  character
+Enter the lower bound of the stack space: -13
+Enter the upper bound of the stack space: 57
+Enter the starting index of the multistack: 2
+Enter the size of the multistack: 19
+Enter the number of stacks : 4
+
+Creating stack space from -13 to 57. Using an index of 2 and size of 19 with 4 s
+tacks.
+
+Enter stack data:
+1 gunn
+Attempting to PUSH  gunn            to stack 1...Sucessful!
+1 newton
+Attempting to PUSH  newton          to stack 1...Sucessful!
+1 carmona
+Attempting to PUSH  carmona         to stack 1...Sucessful!
+3 morris
+Attempting to PUSH  morris          to stack 3...Sucessful!
+4 keo
+Attempting to PUSH  keo             to stack 4...Sucessful!
+4 gunn
+Attempting to PUSH  gunn            to stack 4...Sucessful!
+3D
+Attempting to POP stack 3...Sucessful!
+3D
+Attempting to POP stack 3...Failed! [UNDERFLOW]
+1 casper
+Attempting to PUSH  casper          to stack 1...Sucessful!
+3 silva
+Attempting to PUSH  silva           to stack 3...Sucessful!
+3 johnson
+Attempting to PUSH  johnson         to stack 3...Sucessful!
+4 deal
+Attempting to PUSH  deal            to stack 4...Sucessful!
+1 cook
+Attempting to PUSH  cook            to stack 1...
+Bases are: 2 6 11 16 21    Tops are: 7 6 13 19    OldTops are: 2 6 11 16
+Printing Used Contents of StackSpace:
+   Stack 1
+       3  gunn
+       4  newton
+       5  carmona
+       6  casper
+       7          ?  ¦°H?
+   Stack 2
+   Stack 3
+      12  silva
+      13  johnson
+   Stack 4
+      17  keo
+      18  gunn
+      19  deal
+Repacking...
+Done repacking!
+Bases are: 2 11 11 15 21    Tops are: 7 11 13 18    OldTops are: 7 11 13 18
+Printing Used Contents of StackSpace:
+   Stack 1
+       3  gunn
+       4  newton
+       5  carmona
+       6  casper
+       7  cook
+   Stack 2
+   Stack 3
+      12  silva
+      13  johnson
+   Stack 4
+      16  keo
+      17  gunn
+      18  deal
+Sucessful!
+2 mitchel
+Attempting to PUSH  mitchel         to stack 2...
+Bases are: 2 11 11 15 21    Tops are: 7 12 13 18    OldTops are: 7 11 13 18
+Printing Used Contents of StackSpace:
+   Stack 1
+       3  gunn
+       4  newton
+       5  carmona
+       6  casper
+       7  cook
+   Stack 2
+      12  silva
+   Stack 3
+      12  silva
+      13  johnson
+   Stack 4
+      16  keo
+      17  gunn
+      18  deal
+Repacking...
+Done repacking!
+Bases are: 2 7 15 17 21    Tops are: 7 8 17 20    OldTops are: 7 8 17 20
+Printing Used Contents of StackSpace:
+   Stack 1
+       3  gunn
+       4  newton
+       5  carmona
+       6  casper
+       7  cook
+   Stack 2
+       8  mitchel
+   Stack 3
+      16  silva
+      17  johnson
+   Stack 4
+      18  silva
+      19  johnson
+      20  deal
+Sucessful!
+2 novac
+Attempting to PUSH  novac           to stack 2...Sucessful!
+2 bhandari
+Attempting to PUSH  bhandari        to stack 2...Sucessful!
+2 melkus
+Attempting to PUSH  melkus          to stack 2...Sucessful!
+2 zulfiqar
+Attempting to PUSH  zulfiqar        to stack 2...Sucessful!
+1D
+Attempting to POP stack 1...Sucessful!
+2 burris
+Attempting to PUSH  burris          to stack 2...Sucessful!
+2 mcguire
+Attempting to PUSH  mcguire         to stack 2...Sucessful!
+3 cooper
+Attempting to PUSH  cooper          to stack 3...
+Bases are: 2 7 15 17 21    Tops are: 6 14 18 20    OldTops are: 7 8 17 20
+Printing Used Contents of StackSpace:
+   Stack 1
+       3  gunn
+       4  newton
+       5  carmona
+       6  casper
+   Stack 2
+       8  mitchel
+       9  novac
+      10  bhandari
+      11  melkus
+      12  zulfiqar
+      13  burris
+      14  mcguire
+   Stack 3
+      16  silva
+      17  johnson
+      18  silva
+   Stack 4
+      18  silva
+      19  johnson
+      20  deal
+Repacking...
+Done repacking!
+Bases are: 2 6 14 17 21    Tops are: 6 13 17 20    OldTops are: 6 13 17 20
+Printing Used Contents of StackSpace:
+   Stack 1
+       3  gunn
+       4  newton
+       5  carmona
+       6  casper
+   Stack 2
+       7  mitchel
+       8  novac
+       9  bhandari
+      10  melkus
+      11  zulfiqar
+      12  burris
+      13  mcguire
+   Stack 3
+      15  silva
+      16  johnson
+      17  cooper
+   Stack 4
+      18  silva
+      19  johnson
+      20  deal
+Sucessful!
+4 chen
+Attempting to PUSH  chen            to stack 4...Sucessful!
+2D
+Attempting to POP stack 2...Sucessful!
+3 bing
+Attempting to PUSH  bing            to stack 3...
+Bases are: 2 6 14 17 21    Tops are: 6 12 18 21    OldTops are: 6 13 17 20
+Printing Used Contents of StackSpace:
+   Stack 1
+       3  gunn
+       4  newton
+       5  carmona
+       6  casper
+   Stack 2
+       7  mitchel
+       8  novac
+       9  bhandari
+      10  melkus
+      11  zulfiqar
+      12  burris
+   Stack 3
+      15  silva
+      16  johnson
+      17  cooper
+      18  silva
+   Stack 4
+      18  silva
+      19  johnson
+      20  deal
+      21  chen
+Repacking...
+Done repacking!
+Bases are: 2 6 12 16 21    Tops are: 6 12 16 20    OldTops are: 6 12 16 20
+Printing Used Contents of StackSpace:
+   Stack 1
+       3  gunn
+       4  newton
+       5  carmona
+       6  casper
+   Stack 2
+       7  mitchel
+       8  novac
+       9  bhandari
+      10  melkus
+      11  zulfiqar
+      12  burris
+   Stack 3
+      13  silva
+      14  johnson
+      15  cooper
+      16  bing
+   Stack 4
+      17  silva
+      18  johnson
+      19  deal
+      20  chen
+Sucessful!
+1 cho
+Attempting to PUSH  cho             to stack 1...
+Bases are: 2 6 12 16 21    Tops are: 7 12 16 20    OldTops are: 6 12 16 20
+Printing Used Contents of StackSpace:
+   Stack 1
+       3  gunn
+       4  newton
+       5  carmona
+       6  casper
+       7  mitchel
+   Stack 2
+       7  mitchel
+       8  novac
+       9  bhandari
+      10  melkus
+      11  zulfiqar
+      12  burris
+   Stack 3
+      13  silva
+      14  johnson
+      15  cooper
+      16  bing
+   Stack 4
+      17  silva
+      18  johnson
+      19  deal
+      20  chen
+Repacking...
+Insufficient memory to repack
+Overflow. No room to repack.
+Bases are: 2 6 12 16 21    Tops are: 6 12 16 20    OldTops are: 1 0 0 0
+Printing Used Contents of StackSpace:
+   Stack 1
+       3  gunn
+       4  newton
+       5  carmona
+       6  casper
+   Stack 2
+       7  mitchel
+       8  novac
+       9  bhandari
+      10  melkus
+      11  zulfiqar
+      12  burris
+   Stack 3
+      13  silva
+      14  johnson
+      15  cooper
+      16  bing
+   Stack 4
+      17  silva
+      18  johnson
+      19  deal
+      20  chen
+Failed! [OVERFLOW]
+1 An
+Attempting to PUSH  An              to stack 1...
+Bases are: 2 6 12 16 21    Tops are: 7 12 16 20    OldTops are: 1 0 0 0
+Printing Used Contents of StackSpace:
+   Stack 1
+       3  gunn
+       4  newton
+       5  carmona
+       6  casper
+       7  mitchel
+   Stack 2
+       7  mitchel
+       8  novac
+       9  bhandari
+      10  melkus
+      11  zulfiqar
+      12  burris
+   Stack 3
+      13  silva
+      14  johnson
+      15  cooper
+      16  bing
+   Stack 4
+      17  silva
+      18  johnson
+      19  deal
+      20  chen
+Repacking...
+Insufficient memory to repack
+Overflow. No room to repack.
+Bases are: 2 6 12 16 21    Tops are: 6 12 16 20    OldTops are: 6 12 16 20
+Printing Used Contents of StackSpace:
+   Stack 1
+       3  gunn
+       4  newton
+       5  carmona
+       6  casper
+   Stack 2
+       7  mitchel
+       8  novac
+       9  bhandari
+      10  melkus
+      11  zulfiqar
+      12  burris
+   Stack 3
+      13  silva
+      14  johnson
+      15  cooper
+      16  bing
+   Stack 4
+      17  silva
+      18  johnson
+      19  deal
+      20  chen
+Failed! [OVERFLOW]
+1 Varrol
+Attempting to PUSH  Varrol          to stack 1...
+Bases are: 2 6 12 16 21    Tops are: 7 12 16 20    OldTops are: 6 12 16 20
+Printing Used Contents of StackSpace:
+   Stack 1
+       3  gunn
+       4  newton
+       5  carmona
+       6  casper
+       7  mitchel
+   Stack 2
+       7  mitchel
+       8  novac
+       9  bhandari
+      10  melkus
+      11  zulfiqar
+      12  burris
+   Stack 3
+      13  silva
+      14  johnson
+      15  cooper
+      16  bing
+   Stack 4
+      17  silva
+      18  johnson
+      19  deal
+      20  chen
+Repacking...
+Insufficient memory to repack
+Overflow. No room to repack.
+Bases are: 2 6 12 16 21    Tops are: 6 12 16 20    OldTops are: 1 0 0 0
+Printing Used Contents of StackSpace:
+   Stack 1
+       3  gunn
+       4  newton
+       5  carmona
+       6  casper
+   Stack 2
+       7  mitchel
+       8  novac
+       9  bhandari
+      10  melkus
+      11  zulfiqar
+      12  burris
+   Stack 3
+      13  silva
+      14  johnson
+      15  cooper
+      16  bing
+   Stack 4
+      17  silva
+      18  johnson
+      19  deal
+      20  chen
+Failed! [OVERFLOW]

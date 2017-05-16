@@ -1,0 +1,232 @@
+
+GNAT GPL 2014 (20140331)
+Copyright 1992-2014, Free Software Foundation, Inc.
+
+
+Compiling: c:/users/pramesh/desktop/cosc33~1/lab2/genericstack.adb (source file time stamp: 2015-04-04 20:27:24)
+
+     1. --Parameshor Bhandari
+     2. --COSC3319 Data Structure
+     3. --Lab 2
+     4. --A option
+     5. --03/06/2015
+     6.
+     7. WITH Ada.Text_IO; USE Ada.Text_IO;
+     8.
+     9.
+    10. PACKAGE BODY GenericStack IS
+    11.
+    12.
+    13.    PACKAGE Iio IS NEW Ada.Text_IO.Integer_IO(Integer); USE Iio;
+    14.    PACKAGE Fio IS NEW Ada.Text_IO.Float_IO(Float); USE Fio;
+    15.
+    16.
+    17.    StackSpace: ARRAY(LeftBound..RightBound) OF Item;
+    18.    Base: ARRAY(1..(NumStacks+1)) OF Integer;
+    19.    OldTop: ARRAY(1..NumStacks+1) OF Integer;
+    20.    Top: ARRAY(1..NumStacks) OF Integer;
+    21.
+    22.    MinSpace: Integer:= Integer ( Float'Ceiling( Float(Size ) * 0.10) );
+    23.
+    24.    PROCEDURE Push(X: IN Item; Stk: IN Positive; Exception_Result: OUT Boolean) IS
+    25.
+    26.    BEGIN
+    27.       Top(Stk) := Top(Stk) + 1;
+    28.       IF Top(Stk) > Base(Stk+ 1) THEN
+    29.          --Start repacking
+    30.          Put_Line("");
+    31.          PrintTopsAndBottoms;
+    32.          PrintContents;
+    33.          Put_Line("Repacking...");
+    34.          Repack(Stk, Exception_Result);
+    35.
+    36.          IF Exception_Result = True THEN
+    37.             Put_Line("Overflow. No room to repack.");
+    38.             --No room to repack, so deallocate the previous space.
+    39.             Top(Stk) := Top(Stk) - 1;
+    40.             PrintTopsAndBottoms;
+    41.             PrintContents;
+    42.          ELSE
+    43.             Put_Line("Done repacking!");
+    44.             PrintTopsAndBottoms;
+    45.             --PrintContents;
+    46.             StackSpace(Top(Stk)) := X;
+    47.             PrintContents;
+    48.
+    49.          END IF;
+    50.       ELSE
+    51.          StackSpace(Top(Stk)) := X;
+    52.          Exception_Result := False;
+    53.       END IF;
+    54.    END Push;
+    55.
+    56.
+    57.    PROCEDURE Pop(X: OUT Item; Stk: IN Positive; Exception_Result: OUT Boolean) IS
+    58.
+    59.    BEGIN
+    60.       IF Top(Stk) = Base(Stk) THEN
+    61.          Exception_Result := True;
+    62.       ELSE
+    63.          X := StackSpace(Top(Stk));
+    64.          Top(Stk) := Top(Stk) - 1;
+    65.          Exception_Result := False;
+    66.       END IF;
+    67.    END Pop;
+    68.
+    69.    PROCEDURE Repack(CurStack: IN Positive; Exception_Repack: OUT Boolean) IS
+    70.
+    71.       EqualAllocate: Float:= 0.09;--Percentage to allocate equally
+    72.       GrowthAllocate: Float:= 1.0-EqualAllocate;--Percentage to allocate to growing stacks
+    73.       AvailSpace:Integer;
+    74.       TotalInc:Integer;
+    75.       J:Integer;
+    76.       Alpha:Float; Beta:Float;
+    77.       Sigma:Float:=0.0;
+    78.       Tau:Float;
+    79.       Delta1:Integer;
+    80.
+    81.    BEGIN
+    82.       --calculate the amount of available space for reallocation
+    83.       --TotalInc is the total growth since last time memory overflowed
+    84.       AvailSpace := Size; TotalInc := 0; J := NumStacks;
+    85.       WHILE J > 0 LOOP
+    86.          AvailSpace := AvailSpace - (Top(J) - Base(J));
+    87.          IF Top(J) > OldTop(J) THEN
+    88.             OldTop(J):= Top(J) - OldTop(J);
+    89.             TotalInc := TotalInc + OldTop(J);
+    90.          ELSE
+    91.             OldTop(J) := 0;
+    92.          END IF;
+    93.          J := J - 1;
+    94.       END LOOP;
+    95.
+    96.       --check if we can repack with AvailSpace left
+    97.       IF AvailSpace < (MinSpace - 1) THEN
+    98.          Put_Line("Insufficient memory to repack");
+    99.          Exception_Repack:=True;
+   100.       ELSE
+   101.          --calculate equal space amount (double/float)
+   102.          Alpha := EqualAllocate * Float(AvailSpace) / Float(NumStacks);
+   103.          --calculate growth space amount (double/float)
+   104.          Beta := GrowthAllocate * (Float(AvailSpace) / Float(TotalInc));
+   105.          --calculate new bases for stacks
+   106.          J := OldTop(1);
+   107.          OldTop(1) := Base(1);
+   108.          FOR K IN 2..NumStacks LOOP
+   109.             Tau := Sigma + Alpha + (Float(J) * Beta);
+   110.            J := OldTop(K);
+   111.             OldTop(K) := Integer( Float( OldTop(K-1)+(Top(K-1)-Base(K-1)) ) + Float'Floor(Tau) - Float'Floor(Sigma) );
+   112.             Sigma := Tau;
+   113.          END LOOP;
+   114.
+   115.          Top(CurStack) := Top(CurStack) - 1;
+   116.
+   117.          -- Moving the content of the stack
+   118.          -- Moving all stacks down first
+   119.          FOR J IN 2..NumStacks LOOP
+   120.             IF OldTop(J) < Base(J) THEN
+   121.                Delta1 := Base(J) - OldTop(J);
+   122.                FOR L IN (Base(J)+1)..Top(J) LOOP
+   123.                   StackSpace(L - Delta1) := StackSpace(L);
+   124.                END LOOP;
+   125.                Base(J) := OldTop(J);
+   126.                Top(J) := Top(J) - Delta1;
+   127.             END IF;
+   128.          END LOOP;
+   129.
+   130.          --Moving all stacks up without overlaping any stacks
+   131.          FOR J IN 2..NumStacks LOOP
+   132.             IF OldTop(J) > Base(J) THEN
+   133.                Delta1 := OldTop(J) - Base(J);
+   134.                FOR L IN REVERSE (Base(J)+1)..Top(J) LOOP
+   135.                   StackSpace(L + Delta1) := StackSpace(L);
+   136.                END LOOP;
+   137.                Base(J) := OldTop(J);
+   138.                Top(J) := Top(J) + Delta1;
+   139.             END IF;
+   140.          END LOOP;
+   141.
+   142.          Top(CurStack) := Top(CurStack) + 1;
+   143.          FOR J IN 1..NumStacks LOOP
+   144.             OldTop(J) := Top(J);
+   145.          END LOOP;
+   146.          Exception_Repack := False;
+   147.       END IF;
+   148.    END Repack;
+   149.
+   150.    PROCEDURE SetMinSpace(Min: IN Positive) IS
+   151.
+   152.    BEGIN
+   153.       MinSpace:=Min;
+   154.    END SetMinSpace;
+   155.
+   156.    PROCEDURE PrintContents IS
+   157.
+   158.    BEGIN
+   159.       Put_Line("Printing Used Contents of StackSpace:");
+   160.       FOR I IN 1..NumStacks LOOP
+   161.          Put("   Stack ");Put(I,0);Put_Line("");
+   162.          FOR J IN (Base(I)+1)..Top(I) LOOP
+   163.             Put("      ");Put(J,2);Put(" ");Put(StackSpace(J));Put_Line("");
+   164.          END LOOP;
+   165.       END LOOP;
+   166.    END PrintContents;
+   167.
+   168.    PROCEDURE PrintTopsAndBottoms IS
+   169.
+   170.    BEGIN
+   171.       Put("Bases are: ");
+   172.       FOR I IN 1..(NumStacks+1) LOOP
+   173.          Put(Base(I),0);Put(" ");
+   174.       END LOOP;
+   175.       Put("   Tops are: ");
+   176.       FOR I IN 1..NumStacks LOOP
+   177.          Put(Top(I),0);Put(" ");
+   178.       END LOOP;
+   179.       Put("   OldTops are: ");
+   180.       FOR I IN 1..NumStacks LOOP
+   181.          Put(OldTop(I),0);Put(" ");
+   182.       END LOOP;
+   183.       Put_Line("");
+   184.    END PrintTopsAndBottoms;
+   185.
+   186. BEGIN
+   187.    FOR J IN 1..NumStacks LOOP
+   188.       Base(J) := Integer(Float'Floor((Float(J - 1) / Float(NumStacks)) * Float((Size+L0)))) + (L0);
+   189.       Top(J) := Base(J);
+   190.       OldTop(J) := Top(J);
+   191.    END LOOP;
+   192.    Base(NumStacks + 1) := Size +L0 -1;
+   193. END GenericStack;
+   194.
+   195.
+
+Compiling: c:/users/pramesh/desktop/cosc33~1/lab2/genericstack.ads (source file time stamp: 2015-03-20 05:11:34)
+
+     1. --Parameshor Bhandari
+     2. --CS3319 Data Structure
+     3. --Lab 2
+     4. GENERIC
+     5.
+     6.    LeftBound: Integer;
+     7.    RightBound: Integer;
+     8.    L0: Integer;
+     9.    Size: Integer;
+    10.    NumStacks: Positive;
+    11.    TYPE Item IS PRIVATE;
+    12.    WITH PROCEDURE Put(X: Item);  -- required for printing
+    13.
+    14.    PACKAGE GenericStack IS
+    15.
+    16.       PROCEDURE Push(X: IN Item; Stk: IN Positive; Exception_Result: OUT Boolean);
+    17.       PROCEDURE Pop(X: OUT Item; Stk: IN Positive; Exception_Result: OUT Boolean);
+    18.       PROCEDURE Repack(CurStack: IN Positive; Exception_Repack: OUT Boolean);
+    19.       PROCEDURE SetMinSpace(Min: IN Positive);
+    20.       PROCEDURE PrintContents;
+    21.       PROCEDURE PrintTopsAndBottoms;
+    22.    END GenericStack;
+    23.
+    24.
+    25.
+
+ 195 lines: No errors

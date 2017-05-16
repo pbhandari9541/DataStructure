@@ -1,0 +1,104 @@
+V "GNAT Lib v2014"
+M P W=b
+A -gnatwu
+A -g
+A -gnato
+A -gnatwa
+A -gnat05
+A -mtune=generic
+A -march=pentiumpro
+P SS ZX
+
+RN
+RV NO_ALLOCATORS
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_DISPATCHING_CALLS
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTIONS
+RV NO_IO
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_IMPLICIT_LOOPS
+RV NO_LOCAL_ALLOCATORS
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_ALLOCATORS_AFTER_ELABORATION
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV SPARK_05
+
+U program3%b		program3.adb		b2532a17 NE OO SU KU
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.streams%s		a-stream.adb		a-stream.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+Z ada.text_io.integer_aux%s  a-tiinau.adb	a-tiinau.ali
+W ada.text_io.integer_io%s
+W generictopologicalsort%s  generictopologicalsort.adb  generictopologicalsort.ali
+W system%s		system.ads		system.ali
+W system.address_image%s  s-addima.adb		s-addima.ali
+W system.concat_2%s	s-conca2.adb		s-conca2.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W system.stream_attributes%s  s-stratt.adb	s-stratt.ali
+
+D ada.ads		20140406181354 3ffc8e18 ada%s
+D a-except.ads		20140406181356 43d57f8c ada.exceptions%s
+D a-finali.ads		20140406181358 69f99942 ada.finalization%s
+D a-ioexce.ads		20140406181358 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20140406181354 1a984740 ada.streams%s
+D a-tags.ads		20140406181356 dc4d0634 ada.tags%s
+D a-textio.ads		20140406181358 386df5d4 ada.text_io%s
+D a-tiinau.ads		20140406181356 8114c8e4 ada.text_io.integer_aux%s
+D a-tiinio.ads		20140406181358 aa04e5d6 ada.text_io.integer_io%s
+D a-tiinio.adb		20140406181356 df9cd7af ada.text_io.integer_io%b
+D a-unccon.ads		20140406181358 f9eb8f06 ada.unchecked_conversion%s
+D generictopologicalsort.ads  20150405162616 5a71941f generictopologicalsort%s
+D generictopologicalsort.adb  20150405173436 641558a5 generictopologicalsort%b
+D interfac.ads		20140406181358 69adb1b9 interfaces%s
+D i-cstrea.ads		20140406181356 febc86ed interfaces.c_streams%s
+D program3.adb		20150405170418 d04f4bdc program3%b
+D system.ads		20140406181358 5fc8ae56 system%s
+D s-addima.ads		20140406181356 a1ec9d3a system.address_image%s
+D s-conca2.ads		20140406181358 02a0d7d0 system.concat_2%s
+D s-crtl.ads		20140406181356 2c012597 system.crtl%s
+D s-exctab.ads		20140406181354 54135002 system.exception_table%s
+D s-ficobl.ads		20140406181354 078245e4 system.file_control_block%s
+D s-finmas.ads		20140406181356 814daec4 system.finalization_masters%s
+D s-finroo.ads		20140406181358 4ff27390 system.finalization_root%s
+D s-parame.ads		20140406181358 06da98b2 system.parameters%s
+D s-pooglo.ads		20140406181356 542f33d0 system.pool_global%s
+D s-secsta.ads		20140406181358 86a2856d system.secondary_stack%s
+D s-soflin.ads		20140406181358 aa763b52 system.soft_links%s
+D s-stache.ads		20140406181354 a37c21ec system.stack_checking%s
+D s-stalib.ads		20140406181354 fa0a3617 system.standard_library%s
+D s-stoele.ads		20140406181356 2dc34a04 system.storage_elements%s
+D s-stoele.adb		20140406181354 ed88f8fb system.storage_elements%b
+D s-stopoo.ads		20140406181356 b16154c2 system.storage_pools%s
+D s-stratt.ads		20140406181358 aedef97e system.stream_attributes%s
+D s-traent.ads		20140406181354 b5116092 system.traceback_entries%s
+D s-unstyp.ads		20140406181356 510692af system.unsigned_types%s
+D s-wchcon.ads		20140406181358 1b7d22d2 system.wch_con%s
+X 1 ada.ads
+16K9*Ada 19e8 16|7r6 7r23 13r23
+X 7 a-textio.ads
+49K13*Text_IO 471e16 16|7w10 7r27 13r27
+206U14*Get 16|33s31
+242U14*Put 16|17s4 30s10 31s10 33s10 40s35
+263U14*Put_Line 16|40s7 40s21
+X 9 a-tiinio.ads
+46k21*Integer_IO 85e27 16|13r35
+56U14 Get 16|18s4[13] 30s31[13] 31s30[13]
+X 12 generictopologicalsort.ads
+10k9*GenericTopologicalSort 15e27 16|8w6 22r27
+12U14 GetRelation 16|32s10[22]
+13U14 TopologicalSort 16|41s7[22]
+X 16 program3.adb
+11U11*Program3 11b11 43l5 43t13
+13K12 Iio[9|46] 13r60
+14i4 NumElements{integer} 18m8 22r50
+22K15 Topo[12|10] 22r68
+23b7 InputComplete{boolean} 29r13 35m13
+24e7 Resp{character} 33m35 34r13 34r27
+25i7 J{integer} 30m35 32r22
+25i10 K{integer} 31m34 32r24
+

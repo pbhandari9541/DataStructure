@@ -1,0 +1,143 @@
+
+GNAT GPL 2014 (20140331)
+Copyright 1992-2014, Free Software Foundation, Inc.
+
+
+Compiling: c:/users/pramesh/desktop/cosc33~1/lab4/program4.adb (source file time stamp: 2015-04-28 00:11:14)
+
+     1. --Parameshor Bhandari
+     2. --COSC3319
+     3. --Lab 4
+     4. --B Option
+     5. --Dr. Burris
+     6.
+     7. WITH Ada.Text_IO; USE Ada.Text_IO;
+     8. WITH BinarySearchTree;
+     9.
+    10. PROCEDURE Program4 IS
+    11.
+    12.    TYPE String13 IS ARRAY(1..13) OF Character;
+    13.    TYPE Customer IS RECORD
+    14.          Name: String13;
+    15.          PhoneNumber: String13;
+    16.       END RECORD;
+    17.
+    18.    FUNCTION CustomerKey(Cust: IN Customer) RETURN String13 IS
+    19.    BEGIN
+    20.       RETURN Cust.Name;
+    21.    END CustomerKey;
+    22.
+    23.    PROCEDURE CustomerPrint(Cust: IN Customer) IS
+    24.    BEGIN
+    25.       Put(String(Cust.Name));Put(" ");Put(String(Cust.PhoneNumber));
+    26.
+    27.    END CustomerPrint;
+    28.
+    29.
+    30.    FUNCTION "<"(Name: IN String13; Cust: IN Customer) RETURN Boolean IS
+    31.    BEGIN
+    32.       IF Name < Cust.Name THEN
+    33.          RETURN True;
+    34.       ELSE
+    35.          RETURN False;
+    36.       END IF;
+    37.    END "<";
+    38.
+    39.    FUNCTION ">"(Name: IN String13; Cust: IN Customer) RETURN Boolean IS
+    40.    BEGIN
+    41.       IF Name > Cust.Name THEN
+    42.          RETURN True;
+    43.       ELSE
+    44.          RETURN False;
+    45.       END IF;
+    46.    END ">";
+    47.
+    48.    FUNCTION "="(Name: IN String13; Cust: IN Customer) RETURN Boolean IS
+    49.    BEGIN
+    50.       IF Name = Cust.Name THEN
+    51.          RETURN True;
+    52.       ELSE
+    53.          RETURN False;
+    54.       END IF;
+    55.    END "=";
+    56.
+    57.    PACKAGE BinaryThreadTree IS NEW
+    58.    BinarySearchTree(String13,Customer,CustomerKey,CustomerPrint,"<",">","="); USE BinaryThreadTree;
+    59.
+    60. BEGIN
+    61.    DECLARE
+    62.       CurCust: Customer;
+    63.       Failed: Boolean := False;
+    64.    BEGIN
+    65.       --OPTION C
+    66.       CurCust := ("Plattenberger","295-1492     "); Insert(CurCust);put_Line(string(cust.name));put_Line("successfull");
+                                                                                            |
+        >>> "cust" is undefined
+
+    67.       CurCust := ("Melkus       ","291-1864     "); Insert(CurCust);
+    68.       CurCust := ("Qamruddin    ","295-1601     "); Insert(CurCust);
+    69.       CurCust := ("Casper       ","293-6122     "); Insert(CurCust);
+    70.       CurCust := ("Aguirre      ","295-1882     "); Insert(CurCust);
+    71.       CurCust := ("Cook         ","291-7890     "); Insert(CurCust);
+    72.       CurCust := ("Vandort      ","294-8075     "); Insert(CurCust);
+    73.       CurCust := ("Keo          ","584-3622     "); Insert(CurCust);
+    74.
+    75.       Find_I("Casper       ", CurCust, Failed);
+    76.       IF Failed /= True THEN
+    77.          CustomerPrint(CurCust); Put_Line("");
+    78.          Put_Line("!!Found!!!");
+    79.       END IF;
+    80.
+    81. --      Find_R("Casper       ", CurCust, Failed);
+    82. --      IF Failed /= True THEN
+    83. --         CustomerPrint(CurCust); Put_Line("");
+    84. --         Put_Line("!!Found!!!");
+    85. --      END IF;
+    86.
+    87.       Find_I("Newton       ", CurCust, Failed);
+    88.       IF Failed /= True THEN
+    89.          CustomerPrint(CurCust); Put_Line("");
+    90.          Put_Line("!!Found!!!");
+    91.       END IF;
+    92.
+    93. --      Find_R("Newton       ", CurCust, Failed);
+    94. --      IF Failed /= True THEN
+    95. --         CustomerPrint(CurCust); Put_Line("");
+    96. --         Put_Line("!!Found!!!");
+    97. --      END IF;
+    98.
+    99.       --This finds Perkins, then traverses in-order from that node.
+   100.
+   101.
+   102.       Put_Line("Inorder sequence starting from Cook(recursive):");
+   103.       InOrder_R("Cook         "); Put_Line("");
+   104.
+   105.       CurCust := ("Vickers      ","294-1568     "); Insert(CurCust);
+   106.       CurCust := ("Gunn         ","294-1882     "); Insert(CurCust);
+   107.       CurCust := ("Zulfiqar     ","295-6622     "); Insert(CurCust);
+   108.
+   109.       Put_Line("Inorder sequence starting from root(recursive):");
+   110.       InOrder_R; Put_Line(""); Put_Line("");
+   111.       --OPTION B
+   112. --      Delete("Plattenberger");
+   113. --      Delete("Cook         ");
+   114. --      Delete("Aguirra      ");
+   115. --      CurCust := ("Novac        ","294-1666     "); Insert(CurCust);
+   116. --      CurCust := ("Ellington    ","295-1882     "); Insert(CurCust);
+   117.
+   118. --      Put_Line("Inorder sequence starting from root(recursive):");
+   119. --      InOrder_R; Put_Line(""); Put_Line("");
+   120.
+   121. --      Put_Line("Reverse Inorder sequence starting from root(recursive):");
+   122. --      ReverseOrder_R; Put_Line(""); Put_Line("");
+   123.
+   124. --      Put_Line("Preorder sequence starting from root(iterative):");
+   125. --      PreOrder_I; Put_Line(""); Put_Line("");
+   126.
+   127.
+   128.    END;
+   129.
+   130. END Program4;
+   131.
+
+ 131 lines: 1 error

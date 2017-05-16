@@ -1,0 +1,33 @@
+V "GNAT Lib v2014"
+A -gnatwu
+A -g
+A -gnato
+A -gnatwa
+A -gnat05
+A -g
+P ZX
+
+RN
+RV SPARK_05
+
+U gstack%b		gstack.adb		ce90ac44 NE OO PK GE IL KM
+
+U gstack%s		gstack.ads		37a7a622 BN EE NE OO PK GE IL
+
+D gstack.ads		20150305161616 37a7a622 gstack%s
+D gstack.adb		20150305173614 f9370a66 gstack%b
+D system.ads		20140406181358 5fc8ae56 system%s
+X 1 gstack.ads
+6+9 MyType 10r25 11r25 2|6r28 8r25 19r24
+7i4 max{positive} 2|6r20 7r25 10r17
+9k9*gStack 6z9 7z4 12l5 12e11 2|5b14 31l6 31t12
+10U14*push 10>19 10<33 2|8b14 17l8 17t12
+10*19 x{6+9} 2|8b19 12r25
+10b33 y{boolean} 2|8b33 13m13 15m13
+11U14*pop 11<18 11<33 2|19b14 28l8 28t11
+11*18 x{6+9} 2|19b18 24m13
+11b33 y{boolean} 2|19b32 22m13 26m13
+X 2 gstack.adb
+6a4 Stack(1|6+9) 12m13 24r17
+7i4 top{integer} 10r12 11m13 11r19 12r19 21r12 24r23 25m13 25r19 30m10
+

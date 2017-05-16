@@ -1,0 +1,18 @@
+--Parameshor Bhandari
+--COSC 3319 Data Structure
+--B Option
+--Lab 3
+--04/02/2015
+GENERIC
+
+   NumElements: Integer;
+   TYPE SortElement IS PRIVATE;
+   WITH PROCEDURE Get(Job: OUT SortElement);
+   WITH Put(Job: IN SortElement);
+
+PACKAGE GenericTopologicalSort IS
+
+   PROCEDURE AddRelation(J: IN SortElement; K: IN Integer);
+   PROCEDURE TopologicalSort;
+
+END GenericTopologicalSort; 

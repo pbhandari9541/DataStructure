@@ -1,0 +1,394 @@
+
+GNAT GPL 2014 (20140331)
+Copyright 1992-2014, Free Software Foundation, Inc.
+
+
+Compiling: c:/users/pramesh/desktop/cosc33~1/lab4/binarysearchtree.adb (source file time stamp: 2015-04-26 15:55:20)
+
+     1. --Parameshor Bhandari
+     2. --CS3319
+     3. --Lab 4
+     4. --B Option
+     5. --Dr. Burris
+     6.
+     7. WITH Ada.Text_IO; USE Ada.Text_IO;
+     8. WITH Ada.Unchecked_Deallocation;
+     9. WITH Ada.Numerics.Generic_Elementary_Functions;
+    10.
+    11.
+    12. PACKAGE BODY BinarySearchTree IS
+    13.    Count: Integer := 0;
+    14.    Root: Pointer;
+    15.
+    16.    PROCEDURE Free IS NEW Ada.Unchecked_Deallocation(Node, Pointer);
+    17.    PROCEDURE Insert(AData: IN Data) IS
+    18.       FindPoint, Q: Pointer;
+    19.    BEGIN
+    20.       Q := NEW Node;
+    21.       Q.Info := AData;
+    22.       IF Root.LLink = Root THEN
+    23.          Q.LTag := True;
+    24.          Q.RTag := True;
+    25.          Q.LLink := Q;
+    26.          Q.RLink := Root;
+    27.          Root.LLink := Q;
+    28.          Root.LTag := False;
+    29.          Count := Count + 1;
+    30.          RETURN;
+    31.       END IF;
+    32.
+    33.       FindPoint := Root.LLink;
+    34.
+    35.       LOOP
+    36.          IF GetKey(AData) < FindPoint.Info THEN
+    37.             IF FindPoint.LTag = True THEN
+    38.                Q.LLink := FindPoint.LLink;
+    39.                Q.LTag := FindPoint.LTag;
+    40.                FindPoint.LLink := Q;
+    41.                FindPoint.LTag := False;
+    42.                Q.RTag := True;
+    43.                Q.RLink := FindPoint;
+    44.                IF Q.LTag = False THEN
+    45.                   InOrderPredecessor(Q).RLink := Q;
+    46.                END IF;
+    47.                Count := Count + 1;
+    48.                EXIT;
+    49.             ELSE
+    50.                FindPoint := FindPoint.LLink;
+    51.             END IF;
+    52.          ELSE
+    53.             IF FindPoint.RTag = True THEN
+    54.                Q.RLink := FindPoint.RLink;
+    55.                Q.RTag := FindPoint.RTag;
+    56.                FindPoint.RLink := Q;
+    57.                FindPoint.RTag := False;
+    58.                Q.LTag := True;
+    59.                Q.LLink := FindPoint;
+    60.                IF Q.RTag = False THEN
+    61.                   InOrderSuccessor(Q).LLink := Q;
+    62.                END IF;
+    63.                Count := Count + 1;
+    64.                EXIT;
+    65.             ELSE
+    66.                FindPoint := FindPoint.RLink;
+    67.             END IF;
+    68.          END IF;
+    69.       END LOOP;
+    70.    END Insert;
+    71.
+    72.
+    73.    FUNCTION InOrderSuccessor(P: IN Pointer) RETURN Pointer IS
+    74.       Q: Pointer;
+    75.    BEGIN
+    76.       Q := P.RLink;
+    77.       IF P.RTag = False THEN
+    78.          RETURN Q;
+    79.       ELSE
+    80.           WHILE Q.LTag = False LOOP
+    81.             Q := Q.LLink;
+    82.          END LOOP;
+    83.       END IF;
+    84.       RETURN Q;
+    85.    END InOrderSuccessor;
+    86.
+    87.    FUNCTION InOrderPredecessor(P: IN Pointer) RETURN Pointer IS
+    88.       Q: Pointer;
+    89.    BEGIN
+    90.       Q := P.LLink;
+    91.       IF P.LTag /= False THEN
+    92.          WHILE Q.RTag = true LOOP
+    93.             Q := Q.RLink;
+    94.          END LOOP;
+    95.       END IF;
+    96.       RETURN Q;
+    97.    END InOrderPredecessor;
+    98.
+    99.    PROCEDURE Find_I(AKey: IN Key; OutData: OUT Data; Failed: OUT Boolean) IS
+   100.       FindPoint: Pointer;
+   101.    BEGIN
+   102.       Failed := False;
+   103.       FindPoint := Root.LLink;
+   104.       LOOP
+   105.          IF FindPoint.LLink = Root THEN
+   106.             Put_Line("Tree is empty or item does not exist.");
+   107.             EXIT;
+   108.          END IF;
+   109.          IF AKey < FindPoint.Info THEN
+   110.             IF FindPoint.LTag = True THEN
+   111.                Failed := True;
+   112.                Put_Line("Using iterative method, Item does not exist.");
+   113.                EXIT;
+   114.             ELSE
+   115.                FindPoint := FindPoint.LLink;
+   116.             END IF;
+   117.          ELSIF AKey > FindPoint.Info THEN
+   118.             IF FindPoint.RTag = True THEN
+   119.                Failed := True;
+   120.                Put_Line("Using iterative method, Item does not exist.");
+   121.                EXIT;
+   122.             ELSE
+   123.                FindPoint := FindPoint.RLink;
+   124.             END IF;
+   125.          ELSE
+   126.             OutData := FindPoint.Info;
+   127.             EXIT;
+   128.          END IF;
+   129.       END LOOP;
+   130.    END Find_I;
+   131.
+   132.    FUNCTION Find_I(AKey: IN Key) RETURN Pointer IS
+   133.       FindPoint: Pointer;
+   134.    BEGIN
+   135.       FindPoint := Root.LLink;
+   136.       LOOP
+   137.          IF FindPoint.LLink = Root THEN
+   138.             Put_Line("Tree is empty.");
+   139.             RETURN NULL;
+   140.          END IF;
+   141.          IF AKey < FindPoint.Info THEN
+   142.             IF FindPoint.LTag = True THEN
+   143.                RETURN NULL;
+   144.             ELSE
+   145.                FindPoint := FindPoint.LLink;
+   146.             END IF;
+   147.          ELSIF AKey > FindPoint.Info THEN
+   148.             IF FindPoint.RTag = True THEN
+   149.                RETURN NULL;
+   150.             ELSE
+   151.                FindPoint := FindPoint.RLink;
+   152.             END IF;
+   153.          ELSE
+   154.             RETURN FindPoint;
+   155.          END IF;
+   156.       END LOOP;
+   157.    END Find_I;
+   158.
+   159.    PROCEDURE Find_R(AKey: IN Key; OutData: OUT Data; Failed: OUT Boolean) IS
+   160.       PROCEDURE FindNode_R(FindPoint: IN out Pointer; AKey: IN Key; OutData: OUT Data) IS
+   161.       BEGIN
+   162.          IF Root.RLink = Root THEN
+   163.             FindPoint:= Root.Llink;
+   164.          ELSE
+   165.             FindPoint:=Root;
+   166.          END IF;
+   167.          Failed:= False;
+   168.          IF AKey /= FindPoInt.Info THEN
+   169.             IF AKey < FindPoint.Info THEN
+   170.                IF FindPoint.LTag THEN
+   171.                   Find_R(FindPoint.LLink,Akey,Failed);
+   172.                END IF;
+   173.             else
+   174.                IF FindPoint.RTag THEN
+   175.                   Find_R(FindPoint.RLink,Akey,Failed);
+   176.                END IF;
+   177.             END IF;
+   178.          ELSE
+   179.             FAILED := TRUE;
+   180.          END IF;
+   181.
+   182.
+   183.
+   184.
+   185.
+   186.
+   187. --         IF FindPoint /= Root THEN
+   188. --            IF AKey < FindPoint.Info THEN
+   189. --               FindNode_R(FindPoint.LLink, AKey, OutData);
+   190. --            ELSIF AKey > FindPoint.Info THEN
+   191. --               FindNode_R(FindPoint.RLink, AKey, OutData);
+   192. --            ELSE
+   193. --               OutData := FindPoint.Info;
+   194. --            END IF;
+   195. --         ELSE
+   196. --            Failed := True;
+   197. --            Put_Line("Using recursive method, Item does not exist.");
+   198. --         END IF;
+   199.       END FindNode_R;
+   200.
+   201. --   BEGIN
+   202. --      Failed := False;
+   203. --      IF Root.LLink = Root THEN
+   204. --         Put_Line("Tree is empty.");
+   205. --      ELSE
+   206. --         FindNode_R(Root.LLink, AKey, OutData);
+   207. --      END IF;
+   208.    END Find_R;
+          |
+        >>> missing "BEGIN" for procedure "Find_R" at line 159
+
+   209.    PROCEDURE Delete(AKey: IN Key) IS
+   210.       Q, T, R, S: Pointer;
+   211.    BEGIN
+   212.       Q := Find_I(AKey);
+   213.       T := Q;
+   214.       IF T.RTag = True THEN
+   215.          Q := T.LLink;
+   216.          Free(T);
+   217.       ELSE
+   218.          IF T.LTag = True THEN
+   219.             Q := T.RLink;
+   220.             Free(T);
+   221.          END IF;
+   222.          R := T.RLink;
+   223.          IF R.LTag = True THEN
+   224.             R. LLink := T.LLink;
+   225.             Q := R;
+   226.             Free(T);
+   227.          ELSE
+   228.             S := R.LLink;
+   229.             WHILE S.LTag = True LOOP
+   230.                R := S;
+   231.                S := R.LLink;
+   232.             END LOOP;
+   233.             S.LLink := T.Llink;  R.LLink := S.RLink;
+   234.             S.RLink := T.RLink;  Q := S;
+   235.             Free(T);
+   236.          END IF;
+   237.       END IF;
+   238.       IF T = Root THEN
+   239.          Root := Q;
+   240.       ELSE
+   241.          IF T /= NULL THEN
+   242.             T.LLink := Q;
+   243.          ELSE
+   244.             T.RLink := Q;
+   245.          END IF;
+   246.       END IF;
+   247.    END Delete;
+   248.
+   249.    FUNCTION Size RETURN Integer IS
+   250.    BEGIN
+   251.       RETURN Count;
+   252.    END Size;
+   253.
+   254.    PROCEDURE PreOrder_R IS
+   255.       PROCEDURE PreOrderNode_R(Point: IN Pointer) IS
+   256.       BEGIN
+   257.          IF Point /= Root THEN
+   258.             Print(Point.Info);Put(", ");
+   259.             IF Point.LTag = False THEN
+   260.                PreOrderNode_R(Point.LLink);
+   261.             END IF;
+   262.             IF Point.RTag = False THEN
+   263.                PreOrderNode_R(Point.RLink);
+   264.             END IF;
+   265.          END IF;
+   266.       END PreOrderNode_R;
+   267.    BEGIN
+   268.       IF Root = Root.LLink THEN
+   269.          Put_Line("Tree is empty.");
+   270.       ELSE
+   271.          PreOrderNode_R(Root.LLink);
+   272.       END IF;
+   273.    END PreOrder_R;
+   274.
+   275.    PROCEDURE PreOrder_I IS
+   276.       Point: Pointer := Root.LLink;
+   277.    BEGIN
+   278.       IF Root = Root.LLink THEN
+   279.          Put_Line("Tree is empty.");
+   280.       ELSE
+   281.          LOOP
+   282.             IF Point = Root THEN
+   283.                EXIT;
+   284.             END IF;
+   285.             Print(Point.Info); Put(", ");
+   286.             IF Point.LTag = False THEN
+   287.                Point := Point.LLink;
+   288.             ELSE
+   289.                IF Point.RTag = False THEN
+   290.                   Point := Point.RLink;
+   291.                ELSE
+   292.                   Point := Point.RLink.RLink;
+   293.                END IF;
+   294.             END IF;
+   295.          END LOOP;
+   296.       END IF;
+   297.    END PreOrder_I;
+   298.
+   299.    PROCEDURE InOrder_R IS
+   300.       PROCEDURE InOrderNode_R(Point: IN Pointer) IS
+   301.       BEGIN
+   302.          IF Point /= Root THEN
+   303.             IF Point.LTag = False THEN
+   304.                InOrderNode_R(Point.LLink);
+   305.             END IF;
+   306.             Print(Point.Info);Put(", ");
+   307.             IF Point.RTag = False THEN
+   308.                InOrderNode_R(Point.RLink);
+   309.             END IF;
+   310.          END IF;
+   311.       END InOrderNode_R;
+   312.
+   313.    BEGIN
+   314.       IF Root = Root.LLink THEN
+   315.          Put_Line("Tree is empty.");
+   316.       ELSE
+   317.          InOrderNode_R(Root.LLink);
+   318.       END IF;
+   319.    END InOrder_R;
+   320.
+   321.    PROCEDURE InOrder_R(AKey: IN Key) IS
+   322.       PROCEDURE InOrderNode_R(Point: IN Pointer) IS
+   323.       BEGIN
+   324.          IF Point /= Root THEN
+   325.             IF Point.LTag = False THEN
+   326.                InOrderNode_R(Point.LLink);
+   327.             END IF;
+   328.             Print(Point.Info);Put(", ");
+   329.             IF Point.RTag = False THEN
+   330.                InOrderNode_R(Point.RLink);
+   331.             END IF;
+   332.          END IF;
+   333.       END InOrderNode_R;
+   334.
+   335.       StartPoint: Pointer;
+   336.
+   337.    BEGIN
+   338.       IF Root = Root.LLink THEN
+   339.          Put_Line("Tree is empty.");
+   340.       ELSE
+   341.          StartPoint := Find_I(AKey);
+   342.          IF StartPoint /= NULL THEN
+   343.             InOrderNode_R(StartPoint);
+   344.          ELSE
+   345.             Put_Line("Item could not be found. Aborting traversal.");
+   346.          END IF;
+   347.       END IF;
+   348.    END InOrder_R;
+   349.
+   350.    PROCEDURE ReverseOrder_R IS
+   351.       PROCEDURE ReverseOrderNode_R(Point: IN Pointer) IS
+   352.       BEGIN
+   353.          IF Point /= Root THEN
+   354.             IF Point.RTag = False THEN
+   355.                ReverseOrderNode_R(Point.RLink);
+   356.             END IF;
+   357.             Print(Point.Info);Put(", ");
+   358.             IF Point.LTag = False THEN
+   359.                ReverseOrderNode_R(Point.LLink);
+   360.             END IF;
+   361.          END IF;
+   362.       END ReverseOrderNode_R;
+   363.
+   364.    BEGIN
+   365.       IF Root = Root.LLink THEN
+   366.          Put_Line("Tree is empty.");
+   367.       ELSE
+   368.          ReverseOrderNode_R(Root.LLink);
+   369.       END IF;
+   370.    END ReverseOrder_R;
+   371.
+   372.
+   373. BEGIN
+   374.    Root := NEW Node;
+   375.    Root.LTag := False;
+   376.    Root.RTag := True;
+   377.    Root.LLink := Root;
+   378.    Root.RLink := Root.LLink;
+   379.
+   380. END BinarySearchTree;
+   381.
+   382.
+
+ 382 lines: 1 error

@@ -1,0 +1,190 @@
+
+GNAT GPL 2014 (20140331)
+Copyright 1992-2014, Free Software Foundation, Inc.
+
+
+Compiling: c:/users/pramesh/desktop/cosc33~1/lab1/boption/boption.adb (source file time stamp: 2015-03-15 21:16:14)
+
+     1. With Ada.Text_IO; Use Ada.Text_IO;
+     2. with Unchecked_Conversion;
+     3. with gStack;
+     4.
+     5. procedure Program1 is
+                  |
+        >>> warning: file name does not match unit name, should be "program1.adb"
+
+     6.    type DataType is (char, int, date, quit);
+     7.    type StackOption is (push, pop, quit);
+     8.
+     9.    package DataType_IO is New Ada.Text_IO.Enumeration_IO(DataType); use DataType_IO;
+    10.    Package StackOption_IO is New Ada.Text_IO.Enumeration_IO(StackOption);use StackOption_IO;
+    11.
+    12.    package MyInt_IO is New Ada.Text_IO.integer_IO(integer);use MyInt_IO;
+    13.
+    14.    function integerToCharacter is New Unchecked_Conversion(Integer,Character);
+           |
+        >>> warning: types for unchecked conversion have different sizes
+
+    15.    function characterToInteger is New Unchecked_Conversion(Character, Integer);
+           |
+        >>> warning: types for unchecked conversion have different sizes
+
+    16.
+    17.    stackSize: Integer;
+    18.    stackType: DataType;
+    19.    stackChoice: StackOption;
+    20.
+    21.    Begin
+    22.       Put("Enter the size of the stack: ");
+    23.       Get(stackSize);
+    24.       Put_Line(" ");
+    25.
+    26.       While 1 = 1 Loop
+    27.          Put("Enter the data type for stack i.e char, int, date or quit: ");
+    28.          Get(stackType);
+    29.          New_Line;
+    30.
+    31.          case stackType is
+    32.             when char=>
+    33.
+    34.                Declare
+    35.                   inputChar: String(1..255);
+    36.                   charLength: Integer:=0;
+    37.                   tempChar: Character;
+    38.                   stackException: Boolean:= False;
+    39.
+    40.                   Package Character_Stack is New gStack(Character, stackSize); Use Character_Stack;
+    41.                Begin
+    42.                   While 1= 1 Loop
+    43.                      Put("Enter the type of the operation i.e push, pop or quit: ");
+    44.                      Get(stackChoice);
+    45.                      Case stackChoice is
+    46.                         WHEN Push =>
+    47.                            Put("");
+    48.                            Put("Enter Characters to push : ");
+    49.                            Skip_Line;
+    50.                            Get_Line(inputChar, charLength);    -- Recives character and character length
+    51.                            Put(inputChar(1..charLength));
+    52.                            Put("==>> Pushed") ;
+    53.                            Put_Line("");
+    54.
+    55.                            If charLength > 0 Then
+    56.                               For i in 1..charLength Loop
+    57.                                  push(inputChar(i),stackException);
+    58.                                  If stackException = True Then
+    59.                                     Put(" Stack is Full");
+    60.                                     Exit;
+    61.                                  End if;
+    62.                               End Loop;
+    63.                            End If;
+    64.
+    65.                            If stackException = False Then
+    66.                               tempChar:= integerToCharacter(charLength);
+    67.                               push(tempChar, stackException);
+    68.                               If stackException = True Then
+    69.                                  Put("Stack is Full");
+    70.                               End If;
+    71.                            End If;
+    72.                         When pop =>
+    73.                            pop(tempChar, stackException);
+    74.                            If stackException = True Then
+    75.                               Put("Stack is Empty");
+    76.                            Else
+    77.                               charLength:= CharacterToInteger(TempChar);
+    78.                               put(charLength);
+    79.                               For i in 1..charLength loop
+    80.                                  pop(tempChar, stackException);
+    81.                                  If stackException = True Then
+    82.                                     Put("Stack is Empty");
+    83.                                     Exit;
+    84.
+    85.                                  Else
+    86.                                     Put(tempChar);
+    87.                                  End If;
+    88.                               END LOOP;
+    89.                               Put_Line("");
+    90.                            End If;
+    91.                         When quit=>
+    92.                            Exit;
+    93.                         When Others =>
+    94.                            Null;
+    95.                      End Case;
+    96.                   End Loop;
+    97.                END;
+    98.
+    99.             WHEN Int=>
+   100.
+   101.                Declare
+   102.                   count: Integer:=0;
+   103.                   tempInt: integer:=-1;
+   104.                   stackException: Boolean:= False;
+   105.
+   106.                   Package integer_Stack is New gStack(integer, stackSize); Use integer_Stack;
+   107.                 Begin
+   108.                   While 1= 1 Loop
+   109.                      Put("Enter the type of the operation i.e push, pop or quit: ");
+   110.                      Get(stackChoice);
+   111.                      Case stackChoice is
+   112.                         WHEN Push =>
+   113.                             Put("Enter integer separated by comma i.e 12,16, 20 etc : ");
+   114.
+   115.                             Put("Pushing.....");
+   116.                             count :=0;
+   117.                             WHILE 1=1 LOOP
+   118.                                get(tempInt);
+   119.                                IF Count = 0 THEN
+   120.                                   Put("Pushing..");
+   121.                                END IF;
+   122.                                Put(tempInt,0);Put(" ");
+   123.                                IF tempInt = 0 THEN
+   124.                                   IF Count /=0 THEN
+   125.                                      Push(Count, stackException);
+   126.                                      IF stackException = true THEN
+   127.                                         Put_Line("Stack is full");
+   128.                                      END IF;
+   129.                                    End if;
+   130.                                    EXIT;
+   131.                                END IF;
+   132.                                Push(TempInt, stackException);
+   133.                                IF stackException = true THEN
+   134.                                   Put_Line("Stack is Full!!");
+   135.                                   EXIT;
+   136.                                END IF;
+   137.                                Count := Count + 1;
+   138.                             END LOOP;
+   139.                             Put_Line("");
+   140.
+   141.                         When pop =>
+   142.                            pop(count, stackException);
+   143.                            If stackException = True Then
+   144.                               Put("Stack is Empty");
+   145.                             ELSE
+   146.                                Put(Count); Put(", ");
+   147.                                FOR i in 1..Count LOOP
+   148.                                   Pop(tempInt,stackException);
+   149.                                   IF stackException = True THEN
+   150.                                      Put_Line("Stack is Empty");
+   151.                                      EXIT;
+   152.                                   ELSE
+   153.                                      Put(tempInt,0); Put(",  ");
+   154.                                   END IF;
+   155.                                END LOOP;
+   156.                                Put_Line("");
+   157.                            End If;
+   158.                         When quit=>
+   159.                            Exit;
+   160.                         When Others =>
+   161.                            Null;
+   162.                      End Case;
+   163.                   End Loop;
+   164.                END;
+   165.
+   166.             When quit =>
+   167.                Exit;
+   168.             When Others =>
+   169.                Null;
+   170.          End Case;
+   171.        END LOOP;
+   172.    End Program1;
+
+ 172 lines: No errors, 3 warnings

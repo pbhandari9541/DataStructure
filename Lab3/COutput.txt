@@ -1,0 +1,94 @@
+		---C-OptionData Output---
+	---1st Data set---
+Elements: 10
+Enter 1st : 3
+Enter 2nd: 1
+Done (y/n): n
+Enter 1st : 8
+Enter 2nd: 3
+Done (y/n): n
+Enter 1st : 6
+Enter 2nd: 2
+Done (y/n): n
+Enter 1st : 5
+Enter 2nd: 6
+Done (y/n): n
+Enter 1st : 7
+Enter 2nd: 6
+Done (y/n): n
+Enter 1st : 4
+Enter 2nd: 1
+Done (y/n): n
+Enter 1st : 5
+Enter 2nd: 2
+Done (y/n): n
+Enter 1st : 10
+Enter 2nd: 4
+Done (y/n): n
+Enter 1st : 5
+Enter 2nd: 10
+Done (y/n): n
+Enter 1st : 5
+Enter 2nd: 9
+Done (y/n): n
+Enter 1st : 9
+Enter 2nd: 7
+Done (y/n): y
+
+
+Sorted order is: 5 8 9 10 3 7 4 6 1 2
+
+
+		--2nd Data Set----
+
+Elements: 10
+Enter 1st : 3
+Enter 2nd: 1
+Done (y/n): n
+Enter 1st : 8
+Enter 2nd: 3
+Done (y/n): n
+Enter 1st : 7
+Enter 2nd: 5
+Done (y/n): n
+Enter 1st : 6
+Enter 2nd: 2
+Done (y/n): n
+Enter 1st : 5
+Enter 2nd: 6
+Done (y/n): n
+Enter 1st : 7
+Enter 2nd: 6
+Done (y/n): n
+Enter 1st : 2
+Enter 2nd: 5
+Done (y/n): n
+Enter 1st : 2
+Enter 2nd: 4
+Done (y/n): n
+Enter 1st : 4
+Enter 2nd: 1
+Done (y/n): n
+Enter 1st : 5
+Enter 2nd: 2
+Done (y/n): n
+Enter 1st : 10
+Enter 2nd: 4
+Done (y/n): n
+Enter 1st : 5
+Enter 2nd: 10
+Done (y/n): n
+Enter 1st : 5
+Enter 2nd: 9
+Done (y/n): n
+Enter 1st : 9
+Enter 2nd: 7
+Done (y/n): y
+
+
+Sorted order is: 8 3
+No Solution.
+The remaining8 element contain at least one loop
+
+Element in the loop: 1
+1 is the first element in the loop

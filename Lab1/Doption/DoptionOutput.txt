@@ -1,0 +1,42 @@
+--  D-Option Result  --
+
+Enter the size of the stack: 20
+
+Enter the data type for stack i.e char, int, date or quit: char
+
+Enter the type of the operation i.e push, pop or quit: push
+Enter Characters to push : Joe
+Joe==>> Pushed
+Enter the type of the operation i.e push, pop or quit: push
+Enter Characters to push : moT
+moT==>> Pushed
+Enter the type of the operation i.e push, pop or quit: push
+Enter Characters to push : Betty
+Betty==>> Pushed
+Enter the type of the operation i.e push, pop or quit: pop
+          5ytteB
+Enter the type of the operation i.e push, pop or quit: pop
+          3Tom
+Enter the type of the operation i.e push, pop or quit: pop
+          3eoJ
+Enter the type of the operation i.e push, pop or quit: pop
+Stack is Empty
+Enter the type of the operation i.e push, pop or quit: push
+Enter Characters to push : Larry
+Larry==>> Pushed
+Enter the type of the operation i.e push, pop or quit: push
+Enter Characters to push : Sarah
+Sarah==>> Pushed
+Enter the type of the operation i.e push, pop or quit: push
+Enter Characters to push : Bob
+Bob==>> Pushed
+Enter the type of the operation i.e push, pop or quit: pop
+          3boB
+Enter the type of the operation i.e push, pop or quit: push
+Enter Characters to push : Harold
+Harold==>> Pushed
+Enter the type of the operation i.e push, pop or quit: push
+Enter Characters to push : Sue
+Sue==>> Pushed
+ Stack is Full
+Enter the type of the operation i.e push, pop or quit:

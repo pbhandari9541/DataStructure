@@ -1,0 +1,127 @@
+V "GNAT Lib v2014"
+M P W=b
+A -gnatwu
+A -g
+A -gnato
+A -gnatwa
+A -gnat05
+A -mtune=generic
+A -march=pentiumpro
+P ZX
+
+RN
+RV NO_ENUMERATION_MAPS
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTIONS
+RV NO_IO
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_UNCHECKED_CONVERSION
+RV SPARK_05
+
+U program1%b		doption.adb		abf0129b NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+Z ada.text_io.enumeration_aux%s  a-tienau.adb	a-tienau.ali
+W ada.text_io.enumeration_io%s
+Z ada.text_io.integer_aux%s  a-tiinau.adb	a-tiinau.ali
+W ada.text_io.integer_io%s
+W gstack%s		gstack.adb		gstack.ali
+W interfaces%s		interfac.ads		interfac.ali
+W system%s		system.ads		system.ali
+W system.img_enum_new%s	s-imenne.adb		s-imenne.ali
+W system.val_enum%s	s-valenu.adb		s-valenu.ali
+W unchecked_conversion%s
+
+D ada.ads		20140406181354 3ffc8e18 ada%s
+D a-except.ads		20140406181356 43d57f8c ada.exceptions%s
+D a-finali.ads		20140406181358 69f99942 ada.finalization%s
+D a-ioexce.ads		20140406181358 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20140406181354 1a984740 ada.streams%s
+D a-tags.ads		20140406181356 dc4d0634 ada.tags%s
+D a-textio.ads		20140406181358 386df5d4 ada.text_io%s
+D a-tienau.ads		20140406181354 6a9c157b ada.text_io.enumeration_aux%s
+D a-tienio.ads		20140406181354 fc618ae6 ada.text_io.enumeration_io%s
+D a-tienio.adb		20140406181354 c9e6b5af ada.text_io.enumeration_io%b
+D a-tiinau.ads		20140406181356 8114c8e4 ada.text_io.integer_aux%s
+D a-tiinio.ads		20140406181358 aa04e5d6 ada.text_io.integer_io%s
+D a-tiinio.adb		20140406181356 df9cd7af ada.text_io.integer_io%b
+D a-unccon.ads		20140406181358 f9eb8f06 ada.unchecked_conversion%s
+D gstack.ads		20150305161616 37a7a622 gstack%s
+D gstack.adb		20150305173614 f9370a66 gstack%b
+D interfac.ads		20140406181358 69adb1b9 interfaces%s
+D i-cstrea.ads		20140406181356 febc86ed interfaces.c_streams%s
+D doption.adb		20150315124154 6e15df75 program1%b
+D system.ads		20140406181358 5fc8ae56 system%s
+D s-crtl.ads		20140406181356 2c012597 system.crtl%s
+D s-exctab.ads		20140406181354 54135002 system.exception_table%s
+D s-ficobl.ads		20140406181354 078245e4 system.file_control_block%s
+D s-finmas.ads		20140406181356 814daec4 system.finalization_masters%s
+D s-finroo.ads		20140406181358 4ff27390 system.finalization_root%s
+D s-imenne.ads		20140406181354 614c06c0 system.img_enum_new%s
+D s-parame.ads		20140406181358 06da98b2 system.parameters%s
+D s-pooglo.ads		20140406181356 542f33d0 system.pool_global%s
+D s-soflin.ads		20140406181358 aa763b52 system.soft_links%s
+D s-stache.ads		20140406181354 a37c21ec system.stack_checking%s
+D s-stalib.ads		20140406181354 fa0a3617 system.standard_library%s
+D s-stoele.ads		20140406181356 2dc34a04 system.storage_elements%s
+D s-stoele.adb		20140406181354 ed88f8fb system.storage_elements%b
+D s-stopoo.ads		20140406181356 b16154c2 system.storage_pools%s
+D s-traent.ads		20140406181354 b5116092 system.traceback_entries%s
+D s-unstyp.ads		20140406181356 510692af system.unsigned_types%s
+D s-valenu.ads		20140406181358 bb1a4295 system.val_enum%s
+D s-wchcon.ads		20140406181358 1b7d22d2 system.wch_con%s
+D unchconv.ads		20140406181354 ca2f9e18 unchecked_conversion%s
+X 1 ada.ads
+16K9*Ada 19e8 19|1r6 1r23 9r31 10r34 12r28
+X 7 a-textio.ads
+49K13*Text_IO 471e16 19|1w10 1r27 9r35 10r38 12r32
+166U14*New_Line 19|29s10
+169U14*Skip_Line 19|49s28
+208U14*Put 19|86s37
+242U14*Put 19|22s7 27s10 43s22 47s28 48s28 51s28 52s28 59s37 69s34 75s31
+. 82s37
+249U14*Get_Line 19|50s28
+263U14*Put_Line 19|24s7 53s28 89s31
+X 9 a-tienio.ads
+26k21*Enumeration_IO 55e31 19|9r43 10r46
+32U14 Get 19|28s10[9] 44s22[10]
+X 12 a-tiinio.ads
+46k21*Integer_IO 85e27 19|12r40
+56U14 Get 19|23s7[12]
+66U14 Put 19|78s31[12]
+X 15 gstack.ads
+9k9*gStack 12e11 19|3w6 40r50
+10U14 push 19|57s34[40] 67s31[40]
+11U14 pop 19|73s28[40] 80s34[40]
+X 19 doption.adb
+5U11*Program1 5b11 106l8 106t16
+6E9 DataType 6e44 9r58 18r15
+6n22 char{6E9} 32r18
+6n28 int{6E9}
+6n33 date{6E9}
+6n39 quit{6E9} 100r18
+7E9 StackOption 7e41 10r61 19r17
+7n25 push{7E9} 46r30
+7n31 pop{7E9} 72r30
+7n36 quit{7E9} 91r30
+9K12 DataType_IO[9|26] 9r73
+10K12 StackOption_IO[9|26] 10r78
+12K12 MyInt_IO[12|46] 12r64
+14V13 integerToCharacter[39|20]{character} 66s42
+15V13 characterToInteger[39|20]{integer} 77s44
+17i4 stackSize{integer} 23m11 40r68
+18e4 stackType{6E9} 28m14 31r15
+19e4 stackChoice{7E9} 44m26 45r27
+35a19 inputChar{string} 50m37 51r32 57r39
+36i19 charLength{integer} 50m48 51r45 55r31 56r43 66r61 77m31 78r35 79r43
+37e19 tempChar{character} 66m31 67r36 73m32 77r63 80m38 86r41
+38b19 stackException{boolean} 57m52 58r37 65r31 67m46 68r34 73m42 74r31 80m48
+. 81r37
+40K27 Character_Stack[15|9] 40r84
+56i35 i{integer} 57r49
+79i35 i{integer}
+X 39 unchconv.ads
+20v10*Unchecked_Conversion 19|2w6 14r39 15r39
+

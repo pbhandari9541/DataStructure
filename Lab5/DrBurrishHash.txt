@@ -1,0 +1,1081 @@
+Statistics for Part A (Linear Probe at 50% full)
+Statistics of first 30 lookups:
+Min probes:           1
+Max probes:          22
+Avg probes:  9.63333E+00
+
+Resetting statistics counters...
+Statistics of last 30 lookups:
+Min probes:         112
+Max probes:         119
+Avg probes:  1.15500E+02
+
+Table for Part A (Linear Probe at 50% full)
+          1 Perfect         
+          2 mole            
+          3 poison          
+          4 brutalize       
+          5 cap             
+          6 cauldron        
+          7 prepossess      
+          8 wince           
+          9 orthodontist    
+         10 live            
+         11 magnetic        
+         12 inlet           
+         13 constrain       
+         14 marsupial       
+         15 rationalize     
+         16 scat            
+         17 toluene         
+         18 wet             
+         19 sparse          
+         20 quandary        
+         21 dactyl          
+         22 nosegay         
+         23 option          
+         24 forgetful       
+         25 privilege       
+         26 sponsor         
+         27 exhilarate      
+         28 guard           
+         29 noggin          
+         30 prologue        
+         31 seal            
+         32 seat            
+         33 tiller          
+         34 ichthyosaur     
+         35 lazy            
+         36 malfeasance     
+         37 compass         
+         38 diastase        
+         39 emperor         
+         40 history         
+         41 keep            
+         42 parasympathetic 
+         43 gangway         
+         44 labial          
+         45 sacrament       
+         46 taint           
+         47 withal          
+         48 oak             
+         49 preordain       
+         50 haberdasher     
+         51 crimp           
+         52 luculent        
+         53 pennywort       
+         54 prevalent       
+         55 monolith        
+         56                 
+         57                 
+         58                 
+         59                 
+         60                 
+         61                 
+         62                 
+         63                 
+         64                 
+         65                 
+         66                 
+         67                 
+         68                 
+         69                 
+         70                 
+         71                 
+         72                 
+         73                 
+         74                 
+         75                 
+         76                 
+         77                 
+         78                 
+         79                 
+         80                 
+         81                 
+         82                 
+         83                 
+         84                 
+         85                 
+         86                 
+         87                 
+         88                 
+         89                 
+         90                 
+         91                 
+         92                 
+         93                 
+         94                 
+         95                 
+         96                 
+         97                 
+         98                 
+         99                 
+        100                 
+        101                 
+        102                 
+        103                 
+        104                 
+        105                 
+        106                 
+        107                 
+        108                 
+        109                 
+        110                 
+        111                 
+        112                 
+        113                 
+        114                 
+        115 ratiocination   
+        116                 
+        117                 
+        118                 
+        119                 
+        120                 
+        121                 
+        122                 
+        123                 
+        124                 
+        125                 
+        126                 
+        127                 
+        128                 
+        129                 
+        130                 
+        131                 
+        132                 
+        133                 
+        134                 
+        135                 
+        136                 
+        137                 
+        138                 
+        139                 
+        140                 
+        141                 
+        142                 
+        143                 
+        144                 
+        145                 
+        146                 
+        147                 
+        148                 
+        149                 
+        150                 
+        151                 
+        152                 
+        153 1234567890123456
+        154 Aguirrie90123456
+        155 Bhandari90123456
+        156 Casperri90123456
+        157 Danielsi90123456
+        158 Paschali90123456
+        159 Salkowski0123456
+        160 Qamruddin0123456
+        161                 
+        162                 
+        163                 
+        164                 
+        165                 
+        166                 
+        167                 
+        168                 
+        169                 
+        170                 
+        171                 
+        172                 
+        173                 
+        174                 
+        175                 
+        176                 
+        177                 
+        178                 
+        179                 
+        180                 
+        181                 
+        182                 
+        183                 
+        184                 
+        185                 
+        186                 
+        187                 
+        188                 
+        189                 
+        190                 
+        191                 
+        192                 
+        193 Ajose           
+        194 Arauza          
+        195 Buck            
+        196 Clark           
+        197 Crouch          
+        198 Davies          
+        199 Dugger          
+        200 Egbe            
+        201 Ellington       
+        202 Farral          
+        203 Garza           
+        204 Gurung          
+        205 Joseph          
+        206 Kelly           
+        207 Corey           
+        208 Adam            
+        209 Clayton         
+        210 Dustin          
+        211 Robert          
+        212 Kyle            
+        213 Scott           
+        214 Octavio         
+        215 Judy            
+        216 Derek           
+        217 Jeffrey         
+        218 Jordon          
+        219 Vinnela         
+        220 Lisa            
+        221 Todd            
+        222 Veronica        
+        223 Matthew         
+        224 Michael         
+        225 Akhila          
+        226 John            
+        227 Charles         
+        228 James           
+        229 Chris           
+        230 Wade            
+        231 Christopher     
+        232 Fernando        
+        233 Batbold         
+        234 Joel            
+        235 Fabulous        
+        236 Misogamist      
+        237 Maiden          
+        238 Eye             
+        239 Constriction    
+        240 Necromancer     
+        241 Syncopate       
+        242 Yolk            
+        243 Afterwards      
+        244 Person          
+        245 Northwest       
+        246 Irreversible    
+        247 Fabricate       
+        248 Honor           
+        249 Staple          
+        250 Under           
+        251 Jutty           
+        252 Finagle         
+        253 Cook            
+        254 Rush            
+        255 Wine            
+        256 Screen          
+
+Statistics for Part B (Linear Probe at 85% full)
+Statistics of first 30 lookups:
+Min probes:           1
+Max probes:         119
+Avg probes:  2.02167E+01
+
+Resetting statistics counters...
+Statistics of last 30 lookups:
+Min probes:         172
+Max probes:         202
+Avg probes:  1.87267E+02
+
+Table for Part B (Linear Probe at 85% full)
+          1 Perfect         
+          2 mole            
+          3 poison          
+          4 brutalize       
+          5 cap             
+          6 cauldron        
+          7 prepossess      
+          8 wince           
+          9 orthodontist    
+         10 live            
+         11 magnetic        
+         12 inlet           
+         13 constrain       
+         14 marsupial       
+         15 rationalize     
+         16 scat            
+         17 toluene         
+         18 wet             
+         19 sparse          
+         20 quandary        
+         21 dactyl          
+         22 nosegay         
+         23 option          
+         24 forgetful       
+         25 privilege       
+         26 sponsor         
+         27 exhilarate      
+         28 guard           
+         29 noggin          
+         30 prologue        
+         31 seal            
+         32 seat            
+         33 tiller          
+         34 ichthyosaur     
+         35 lazy            
+         36 malfeasance     
+         37 compass         
+         38 diastase        
+         39 emperor         
+         40 history         
+         41 keep            
+         42 parasympathetic 
+         43 gangway         
+         44 labial          
+         45 sacrament       
+         46 taint           
+         47 withal          
+         48 oak             
+         49 preordain       
+         50 haberdasher     
+         51 crimp           
+         52 luculent        
+         53 pennywort       
+         54 prevalent       
+         55 monolith        
+         56 suffrage        
+         57 wiper           
+         58 zygote          
+         59 academy         
+         60 amputate        
+         61 brash           
+         62 consummation    
+         63 epicure         
+         64 indulgent       
+         65 minute          
+         66 job             
+         67 hypodermic      
+         68 meridian        
+         69 sinister        
+         70 tag             
+         71 uterus          
+         72 perennial       
+         73 humidity        
+         74 gynecology      
+         75 forego          
+         76 interchangeable 
+         77 needle          
+         78 reach           
+         79 urban           
+         80 nonunion        
+         81 jingle          
+         82 feculent        
+         83 deciduous       
+         84 channel         
+         85 decimate        
+         86 alarm           
+         87 perimeter       
+         88 unlucky         
+         89 wonderful       
+         90 script          
+         91 mousse          
+         92 issue           
+         93 graduation      
+         94 neutrality      
+         95 proxy           
+         96 swine           
+         97 witticism       
+         98 parish          
+         99 sickly          
+        100 way             
+        101 periodic        
+        102 mail            
+        103 close           
+        104 particularity   
+        105 bash            
+        106 conclusion      
+        107 drive           
+        108 foreclose       
+        109 habituation     
+        110 liberty         
+        111 pall            
+        112 recite          
+        113 empress         
+        114 impetuous       
+        115 ratiocination   
+        116 ruminate        
+        117 fork            
+        118 horizon         
+        119 prerequisite    
+        120 romance         
+        121 sensual         
+        122 story           
+        123 tuck            
+        124 imperialist     
+        125 great           
+        126 excite          
+        127 east            
+        128 conclave        
+        129 beast           
+        130 calico          
+        131 beggar          
+        132 article         
+        133 enemy           
+        134 chuck           
+        135 critical        
+        136 ghost           
+        137 dispense        
+        138 figure          
+        139 algorithm       
+        140 bile            
+        141 handsome        
+        142 cat             
+        143 ivy             
+        144 impersonal      
+        145 pennant         
+        146 elephant        
+        147                 
+        148                 
+        149                 
+        150                 
+        151                 
+        152                 
+        153 1234567890123456
+        154 Aguirrie90123456
+        155 Bhandari90123456
+        156 Casperri90123456
+        157 Danielsi90123456
+        158 Paschali90123456
+        159 Salkowski0123456
+        160 Qamruddin0123456
+        161                 
+        162                 
+        163                 
+        164                 
+        165                 
+        166                 
+        167                 
+        168                 
+        169                 
+        170                 
+        171                 
+        172                 
+        173                 
+        174                 
+        175                 
+        176                 
+        177                 
+        178                 
+        179                 
+        180                 
+        181                 
+        182                 
+        183                 
+        184                 
+        185                 
+        186                 
+        187                 
+        188                 
+        189                 
+        190                 
+        191                 
+        192                 
+        193 Ajose           
+        194 Arauza          
+        195 Buck            
+        196 Clark           
+        197 Crouch          
+        198 Davies          
+        199 Dugger          
+        200 Egbe            
+        201 Ellington       
+        202 Farral          
+        203 Garza           
+        204 Gurung          
+        205 Joseph          
+        206 Kelly           
+        207 Corey           
+        208 Adam            
+        209 Clayton         
+        210 Dustin          
+        211 Robert          
+        212 Kyle            
+        213 Scott           
+        214 Octavio         
+        215 Judy            
+        216 Derek           
+        217 Jeffrey         
+        218 Jordon          
+        219 Vinnela         
+        220 Lisa            
+        221 Todd            
+        222 Veronica        
+        223 Matthew         
+        224 Michael         
+        225 Akhila          
+        226 John            
+        227 Charles         
+        228 James           
+        229 Chris           
+        230 Wade            
+        231 Christopher     
+        232 Fernando        
+        233 Batbold         
+        234 Joel            
+        235 Fabulous        
+        236 Misogamist      
+        237 Maiden          
+        238 Eye             
+        239 Constriction    
+        240 Necromancer     
+        241 Syncopate       
+        242 Yolk            
+        243 Afterwards      
+        244 Person          
+        245 Northwest       
+        246 Irreversible    
+        247 Fabricate       
+        248 Honor           
+        249 Staple          
+        250 Under           
+        251 Jutty           
+        252 Finagle         
+        253 Cook            
+        254 Rush            
+        255 Wine            
+        256 Screen          
+
+Hashing collision handler set for random probe. (Part C)
+Statistics for Part C (Random Probe at 50% full)
+Statistics of first 30 lookups:
+Min probes:           1
+Max probes:         202
+Avg probes:  9.86167E+01
+
+Resetting statistics counters...
+Statistics of last 30 lookups:
+Min probes:          84
+Max probes:         114
+Avg probes:  9.86333E+01
+
+Table for Part C (Random Probe at 50% full)
+          1                 
+          2                 
+          3 Davies          
+          4                 
+          5 privilege       
+          6 Fabulous        
+          7                 
+          8 Staple          
+          9 Irreversible    
+         10                 
+         11                 
+         12 Dugger          
+         13 toluene         
+         14                 
+         15                 
+         16 Dustin          
+         17 Qamruddin0123456
+         18                 
+         19 crimp           
+         20 guard           
+         21 live            
+         22 sponsor         
+         23 Necromancer     
+         24                 
+         25 Christopher     
+         26 Ellington       
+         27 Misogamist      
+         28                 
+         29 mole            
+         30                 
+         31 emperor         
+         32                 
+         33                 
+         34 Michael         
+         35                 
+         36 Kelly           
+         37 Under           
+         38                 
+         39                 
+         40                 
+         41 Judy            
+         42 Fabricate       
+         43 parasympathetic 
+         44 malfeasance     
+         45 Yolk            
+         46 James           
+         47                 
+         48 oak             
+         49                 
+         50 marsupial       
+         51 sparse          
+         52                 
+         53 Casperri90123456
+         54                 
+         55 Clayton         
+         56 orthodontist    
+         57 Egbe            
+         58 diastase        
+         59 Joseph          
+         60 Octavio         
+         61 Charles         
+         62 wet             
+         63 wince           
+         64 John            
+         65                 
+         66                 
+         67                 
+         68 labial          
+         69 Vinnela         
+         70                 
+         71                 
+         72                 
+         73                 
+         74                 
+         75                 
+         76                 
+         77 Robert          
+         78                 
+         79                 
+         80                 
+         81 sacrament       
+         82                 
+         83 Person          
+         84 Veronica        
+         85 Gurung          
+         86 Lisa            
+         87                 
+         88                 
+         89                 
+         90                 
+         91                 
+         92 luculent        
+         93 Clark           
+         94                 
+         95 Batbold         
+         96                 
+         97 noggin          
+         98                 
+         99                 
+        100                 
+        101                 
+        102 magnetic        
+        103 seal            
+        104 forgetful       
+        105                 
+        106                 
+        107 exhilarate      
+        108 Wade            
+        109                 
+        110                 
+        111                 
+        112 Syncopate       
+        113 constrain       
+        114 Adam            
+        115 Scott           
+        116 ratiocination   
+        117                 
+        118                 
+        119                 
+        120 Garza           
+        121                 
+        122 Fernando        
+        123                 
+        124                 
+        125                 
+        126 Kyle            
+        127 Farral          
+        128                 
+        129 Rush            
+        130 Wine            
+        131                 
+        132 Maiden          
+        133                 
+        134                 
+        135 Screen          
+        136                 
+        137                 
+        138 nosegay         
+        139 Finagle         
+        140                 
+        141                 
+        142 poison          
+        143 monolith        
+        144                 
+        145 Eye             
+        146 taint           
+        147                 
+        148                 
+        149                 
+        150                 
+        151                 
+        152 history         
+        153                 
+        154 1234567890123456
+        155                 
+        156 Northwest       
+        157                 
+        158 haberdasher     
+        159 Aguirrie90123456
+        160 Perfect         
+        161 Matthew         
+        162                 
+        163 lazy            
+        164                 
+        165                 
+        166 Danielsi90123456
+        167 Akhila          
+        168 Jordon          
+        169                 
+        170                 
+        171 Todd            
+        172                 
+        173                 
+        174                 
+        175 option          
+        176                 
+        177 Corey           
+        178                 
+        179                 
+        180 Cook            
+        181                 
+        182 Jutty           
+        183                 
+        184 Bhandari90123456
+        185                 
+        186                 
+        187                 
+        188                 
+        189                 
+        190                 
+        191                 
+        192                 
+        193                 
+        194 Ajose           
+        195 brutalize       
+        196                 
+        197                 
+        198 gangway         
+        199 Arauza          
+        200                 
+        201 pennywort       
+        202 Derek           
+        203                 
+        204 cap             
+        205                 
+        206 Crouch          
+        207 Honor           
+        208 scat            
+        209                 
+        210 Constriction    
+        211                 
+        212                 
+        213                 
+        214                 
+        215 withal          
+        216 Joel            
+        217 compass         
+        218 prepossess      
+        219 Paschali90123456
+        220                 
+        221                 
+        222 Afterwards      
+        223                 
+        224 Buck            
+        225                 
+        226 prologue        
+        227 Chris           
+        228 Salkowski0123456
+        229                 
+        230                 
+        231                 
+        232                 
+        233 dactyl          
+        234 prevalent       
+        235                 
+        236                 
+        237 preordain       
+        238 ichthyosaur     
+        239 Jeffrey         
+        240                 
+        241                 
+        242                 
+        243                 
+        244                 
+        245 keep            
+        246                 
+        247 rationalize     
+        248                 
+        249 cauldron        
+        250                 
+        251 inlet           
+        252 quandary        
+        253 tiller          
+        254                 
+        255                 
+        256 seat            
+
+Statistics for Part C (Random Probe at 85% full)
+Statistics of first 30 lookups:
+Min probes:           1
+Max probes:         114
+Avg probes:  5.43000E+01
+
+Resetting statistics counters...
+Statistics of last 30 lookups:
+Min probes:         177
+Max probes:         207
+Avg probes:  1.91633E+02
+
+Table for Part C (Random Probe at 85% full)
+          1 imperialist     
+          2 great           
+          3 Davies          
+          4 drive           
+          5 privilege       
+          6 Fabulous        
+          7 excite          
+          8 Staple          
+          9 Irreversible    
+         10                 
+         11 story           
+         12 Dugger          
+         13 toluene         
+         14 beast           
+         15                 
+         16 Dustin          
+         17 Qamruddin0123456
+         18                 
+         19 crimp           
+         20 guard           
+         21 live            
+         22 sponsor         
+         23 Necromancer     
+         24                 
+         25 Christopher     
+         26 Ellington       
+         27 Misogamist      
+         28 impetuous       
+         29 mole            
+         30                 
+         31 emperor         
+         32 east            
+         33 mousse          
+         34 Michael         
+         35                 
+         36 Kelly           
+         37 Under           
+         38 perennial       
+         39 graduation      
+         40 perimeter       
+         41 Judy            
+         42 Fabricate       
+         43 parasympathetic 
+         44 malfeasance     
+         45 Yolk            
+         46 James           
+         47                 
+         48 oak             
+         49 forego          
+         50 marsupial       
+         51 sparse          
+         52 tuck            
+         53 Casperri90123456
+         54 sensual         
+         55 Clayton         
+         56 orthodontist    
+         57 Egbe            
+         58 diastase        
+         59 Joseph          
+         60 Octavio         
+         61 Charles         
+         62 wet             
+         63 wince           
+         64 John            
+         65 amputate        
+         66 brash           
+         67 calico          
+         68 labial          
+         69 Vinnela         
+         70                 
+         71 consummation    
+         72                 
+         73                 
+         74 decimate        
+         75 academy         
+         76 beggar          
+         77 Robert          
+         78 minute          
+         79 horizon         
+         80 cat             
+         81 sacrament       
+         82 foreclose       
+         83 Person          
+         84 Veronica        
+         85 Gurung          
+         86 Lisa            
+         87                 
+         88 mail            
+         89 interchangeable 
+         90 enemy           
+         91                 
+         92 luculent        
+         93 Clark           
+         94 recite          
+         95 Batbold         
+         96 epicure         
+         97 noggin          
+         98                 
+         99 witticism       
+        100 figure          
+        101                 
+        102 magnetic        
+        103 seal            
+        104 forgetful       
+        105 particularity   
+        106                 
+        107 exhilarate      
+        108 Wade            
+        109                 
+        110                 
+        111 alarm           
+        112 Syncopate       
+        113 constrain       
+        114 Adam            
+        115 Scott           
+        116 ratiocination   
+        117                 
+        118 zygote          
+        119 handsome        
+        120 Garza           
+        121 article         
+        122 Fernando        
+        123 dispense        
+        124 elephant        
+        125                 
+        126 Kyle            
+        127 Farral          
+        128                 
+        129 Rush            
+        130 Wine            
+        131 job             
+        132 Maiden          
+        133                 
+        134 bash            
+        135 Screen          
+        136 prerequisite    
+        137 ruminate        
+        138 nosegay         
+        139 Finagle         
+        140 hypodermic      
+        141 ivy             
+        142 poison          
+        143 monolith        
+        144 urban           
+        145 Eye             
+        146 taint           
+        147                 
+        148                 
+        149 critical        
+        150                 
+        151 habituation     
+        152 history         
+        153 sickly          
+        154 1234567890123456
+        155 conclusion      
+        156 Northwest       
+        157 conclave        
+        158 haberdasher     
+        159 Aguirrie90123456
+        160 Perfect         
+        161 Matthew         
+        162 issue           
+        163 lazy            
+        164 gynecology      
+        165 romance         
+        166 Danielsi90123456
+        167 Akhila          
+        168 Jordon          
+        169 channel         
+        170 fork            
+        171 Todd            
+        172                 
+        173 pall            
+        174 swine           
+        175 option          
+        176                 
+        177 Corey           
+        178 bile            
+        179 pennant         
+        180 Cook            
+        181 close           
+        182 Jutty           
+        183 reach           
+        184 Bhandari90123456
+        185 meridian        
+        186                 
+        187 humidity        
+        188 deciduous       
+        189 proxy           
+        190 impersonal      
+        191 chuck           
+        192 neutrality      
+        193                 
+        194 Ajose           
+        195 brutalize       
+        196                 
+        197 unlucky         
+        198 gangway         
+        199 Arauza          
+        200 suffrage        
+        201 pennywort       
+        202 Derek           
+        203                 
+        204 cap             
+        205 nonunion        
+        206 Crouch          
+        207 Honor           
+        208 scat            
+        209                 
+        210 Constriction    
+        211 empress         
+        212 script          
+        213 uterus          
+        214 wonderful       
+        215 withal          
+        216 Joel            
+        217 compass         
+        218 prepossess      
+        219 Paschali90123456
+        220                 
+        221 indulgent       
+        222 Afterwards      
+        223 periodic        
+        224 Buck            
+        225                 
+        226 prologue        
+        227 Chris           
+        228 Salkowski0123456
+        229 wiper           
+        230 ghost           
+        231                 
+        232                 
+        233 dactyl          
+        234 prevalent       
+        235                 
+        236 parish          
+        237 preordain       
+        238 ichthyosaur     
+        239 Jeffrey         
+        240 liberty         
+        241 algorithm       
+        242 needle          
+        243 feculent        
+        244                 
+        245 keep            
+        246                 
+        247 rationalize     
+        248 tag             
+        249 cauldron        
+        250 way             
+        251 inlet           
+        252 quandary        
+        253 tiller          
+        254 jingle          
+        255 sinister        
+        256 seat            
+

@@ -1,0 +1,39 @@
+
+--- A-option result ---
+Enter the size of the stack: 8
+
+Enter the data type for stack i.e char, int, date or quit: date
+
+Date: push, pop, or quit: push
+Enter date (Format: Month day year) or 'Done' for termination:
+January 15 1952
+February 23 1492
+September 1 2004
+done
+Date: push, pop, or quit: push
+Enter date (Format: Month day year) or 'Done' for termination:
+October 12 2003
+done
+Date: push, pop, or quit: push
+Enter date (Format: Month day year) or 'Done' for termination:
+February 4 1777
+December 24 2003
+June 12 2004
+done
+Date: push, pop, or quit: pop
+          3: JUNE 12 2004, DECEMBER 24 2003, FEBRUARY 4 1777,
+Date: push, pop, or quit: pop
+          1: OCTOBER 12 2003,
+Date: push, pop, or quit: pop
+          3: SEPTEMBER 1 2004, FEBRUARY 23 1492, JANUARY 15 1952,
+Date: push, pop, or quit: pop
+stack is Empty
+
+Date: push, pop, or quit: push
+Enter date (Format: Month day year) or 'Done' for termination:
+September 17 1623
+August 11 2002
+done
+Date: push, pop, or quit: pop
+          2: AUGUST 11 2002, SEPTEMBER 17 1623,
+Date: push, pop, or quit:

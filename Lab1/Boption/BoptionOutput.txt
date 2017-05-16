@@ -1,0 +1,35 @@
+-- B-option Result----
+Enter the size of the stack: 15
+
+Enter the data type for stack i.e char, int, date or quit: int
+
+Enter the type of the operation i.e push, pop or quit: push
+Enter integer separated by space or 0 to terminate :  10 25 3 46 0
+Pushing..10 25 3 46 0
+Enter the type of the operation i.e push, pop or quit: pop
+          4, 46,  3,  25,  10,
+Enter the type of the operation i.e push, pop or quit: push
+Enter integer separated by space or 0 to terminate :  32 12 456 7 9 0
+Pushing..32 12 456 7 9 0
+Enter the type of the operation i.e push, pop or quit: push
+Enter integer separated by space or 0 to terminate :  5 17 0
+Pushing..5 17 0
+Enter the type of the operation i.e push, pop or quit: push
+Enter integer separated by space or 0 to terminate :  3 0
+Pushing..3 0
+Enter the type of the operation i.e push, pop or quit: push
+Enter integer separated by space or 0 to terminate :  42 23 67 0
+Pushing..42 23 67 0
+Enter the type of the operation i.e push, pop or quit: pop
+          3, 67,  23,  42,
+Enter the type of the operation i.e push, pop or quit: pop
+          1, 3,
+Enter the type of the operation i.e push, pop or quit: push
+Enter integer separated by space or 0 to terminate :  34 22 56 78 54 6 17 0
+Pushing..34 22 56 78 54 6 17
+Stack is Full!!
+
+Enter the type of the operation i.e push, pop or quit:
+
+raised ADA.IO_EXCEPTIONS.DATA_ERROR : a-tienio.adb:57 instantiated at program1.a
+db:20

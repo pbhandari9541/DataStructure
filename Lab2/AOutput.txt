@@ -1,0 +1,213 @@
+---A-OPTION DATA OUTPUT----
+
+Enter the type of data i.e Character , Date or quit:  date
+Enter the lower bound of the stack space: 0
+Enter the upper bound of the stack space: 50
+Enter the starting index of the multistack: 0
+Enter the size of the multistack: 15
+Enter the number of stacks : 3
+
+Creating stack space from 0 to 50. Using an index of 0 and size of 15 with 3 sta
+cks.
+
+Enter stack data:
+2 january 15 1956
+Attempting to PUSH JANUARY 15, 1956 to stack 2...Sucessful!
+2 february 14 1957
+Attempting to PUSH FEBRUARY 14, 1957 to stack 2...Sucessful!
+3 september 16 1946
+Attempting to PUSH SEPTEMBER 16, 1946 to stack 3...Sucessful!
+2 september 17 1842
+Attempting to PUSH SEPTEMBER 17, 1842 to stack 2...Sucessful!
+2 april 1 2015
+Attempting to PUSH APRIL 1, 2015 to stack 2...Sucessful!
+1 december 24 1996
+Attempting to PUSH DECEMBER 24, 1996 to stack 1...Sucessful!
+3D
+Attempting to POP stack 3...Sucessful!
+1D
+Attempting to POP stack 1...Sucessful!
+3 march 16 1992
+Attempting to PUSH MARCH 16, 1992 to stack 3...Sucessful!
+3D
+Attempting to POP stack 3...Sucessful!
+1D
+Attempting to POP stack 1...Failed! [UNDERFLOW]
+2 january 15 1956
+Attempting to PUSH JANUARY 15, 1956 to stack 2...Sucessful!
+3 april 4 1492
+Attempting to PUSH APRIL 4, 1492 to stack 3...Sucessful!
+3 november 7 1776
+Attempting to PUSH NOVEMBER 7, 1776 to stack 3...Sucessful!
+3 june 12 1994
+Attempting to PUSH JUNE 12, 1994 to stack 3...Sucessful!
+2 july 4 1776
+Attempting to PUSH JULY 4, 1776 to stack 2...
+Bases are: 0 5 10 15    Tops are: 0 11 13    OldTops are: 0 5 10
+Printing Used Contents of StackSpace:
+   Stack 1
+   Stack 2
+       6 JANUARY 15, 1956
+       7 FEBRUARY 14, 1957
+       8 SEPTEMBER 17, 1842
+       9 APRIL 1, 2015
+      10 JANUARY 15, 1956
+      11 APRIL 4, 1492
+   Stack 3
+      11 APRIL 4, 1492
+      12 NOVEMBER 7, 1776
+      13 JUNE 12, 1994
+Repacking...
+Done repacking!
+Bases are: 0 0 9 15    Tops are: 0 6 12    OldTops are: 0 6 12
+Printing Used Contents of StackSpace:
+   Stack 1
+   Stack 2
+       1 JANUARY 15, 1956
+       2 FEBRUARY 14, 1957
+       3 SEPTEMBER 17, 1842
+       4 APRIL 1, 2015
+       5 JANUARY 15, 1956
+       6 JULY 4, 1776
+   Stack 3
+      10 APRIL 4, 1492
+      11 NOVEMBER 7, 1776
+      12 JUNE 12, 1994
+Sucessful!
+2 january 15 2012
+Attempting to PUSH JANUARY 15, 2012 to stack 2...Sucessful!
+3 december 6 1991
+Attempting to PUSH DECEMBER 6, 1991 to stack 3...Sucessful!
+3 march 5 1886
+Attempting to PUSH MARCH 5, 1886 to stack 3...Sucessful!
+1 october 24 1996
+Attempting to PUSH OCTOBER 24, 1996 to stack 1...
+Bases are: 0 0 9 15    Tops are: 1 7 14    OldTops are: 0 6 12
+Printing Used Contents of StackSpace:
+   Stack 1
+       1 JANUARY 15, 1956
+   Stack 2
+       1 JANUARY 15, 1956
+       2 FEBRUARY 14, 1957
+       3 SEPTEMBER 17, 1842
+       4 APRIL 1, 2015
+       5 JANUARY 15, 1956
+       6 JULY 4, 1776
+       7 JANUARY 15, 2012
+   Stack 3
+      10 APRIL 4, 1492
+      11 NOVEMBER 7, 1776
+      12 JUNE 12, 1994
+      13 DECEMBER 6, 1991
+      14 MARCH 5, 1886
+Repacking...
+Done repacking!
+Bases are: 0 1 9 15    Tops are: 1 8 14    OldTops are: 1 8 14
+Printing Used Contents of StackSpace:
+   Stack 1
+       1 OCTOBER 24, 1996
+   Stack 2
+       2 JANUARY 15, 1956
+       3 FEBRUARY 14, 1957
+       4 SEPTEMBER 17, 1842
+       5 APRIL 1, 2015
+       6 JANUARY 15, 1956
+       7 JULY 4, 1776
+       8 JANUARY 15, 2012
+   Stack 3
+      10 APRIL 4, 1492
+      11 NOVEMBER 7, 1776
+      12 JUNE 12, 1994
+      13 DECEMBER 6, 1991
+      14 MARCH 5, 1886
+Sucessful!
+1 november 23 1996
+Attempting to PUSH NOVEMBER 23, 1996 to stack 1...
+Bases are: 0 1 9 15    Tops are: 2 8 14    OldTops are: 1 8 14
+Printing Used Contents of StackSpace:
+   Stack 1
+       1 OCTOBER 24, 1996
+       2 JANUARY 15, 1956
+   Stack 2
+       2 JANUARY 15, 1956
+       3 FEBRUARY 14, 1957
+       4 SEPTEMBER 17, 1842
+       5 APRIL 1, 2015
+       6 JANUARY 15, 1956
+       7 JULY 4, 1776
+       8 JANUARY 15, 2012
+   Stack 3
+      10 APRIL 4, 1492
+      11 NOVEMBER 7, 1776
+      12 JUNE 12, 1994
+      13 DECEMBER 6, 1991
+      14 MARCH 5, 1886
+Repacking...
+Done repacking!
+Bases are: 0 2 9 15    Tops are: 2 9 14    OldTops are: 2 9 14
+Printing Used Contents of StackSpace:
+   Stack 1
+       1 OCTOBER 24, 1996
+       2 NOVEMBER 23, 1996
+   Stack 2
+       3 JANUARY 15, 1956
+       4 FEBRUARY 14, 1957
+       5 SEPTEMBER 17, 1842
+       6 APRIL 1, 2015
+       7 JANUARY 15, 1956
+       8 JULY 4, 1776
+       9 JANUARY 15, 2012
+   Stack 3
+      10 APRIL 4, 1492
+      11 NOVEMBER 7, 1776
+      12 JUNE 12, 1994
+      13 DECEMBER 6, 1991
+      14 MARCH 5, 1886
+Sucessful!
+1 november 2 1990
+Attempting to PUSH NOVEMBER 2, 1990 to stack 1...
+Bases are: 0 2 9 15    Tops are: 3 9 14    OldTops are: 2 9 14
+Printing Used Contents of StackSpace:
+   Stack 1
+       1 OCTOBER 24, 1996
+       2 NOVEMBER 23, 1996
+       3 JANUARY 15, 1956
+   Stack 2
+       3 JANUARY 15, 1956
+       4 FEBRUARY 14, 1957
+       5 SEPTEMBER 17, 1842
+       6 APRIL 1, 2015
+       7 JANUARY 15, 1956
+       8 JULY 4, 1776
+       9 JANUARY 15, 2012
+   Stack 3
+      10 APRIL 4, 1492
+      11 NOVEMBER 7, 1776
+      12 JUNE 12, 1994
+      13 DECEMBER 6, 1991
+      14 MARCH 5, 1886
+Repacking...
+Insufficient memory to repack
+Overflow. No room to repack.
+Bases are: 0 2 9 15    Tops are: 2 9 14    OldTops are: 1 0 0
+Printing Used Contents of StackSpace:
+   Stack 1
+       1 OCTOBER 24, 1996
+       2 NOVEMBER 23, 1996
+   Stack 2
+       3 JANUARY 15, 1956
+       4 FEBRUARY 14, 1957
+       5 SEPTEMBER 17, 1842
+       6 APRIL 1, 2015
+       7 JANUARY 15, 1956
+       8 JULY 4, 1776
+       9 JANUARY 15, 2012
+   Stack 3
+      10 APRIL 4, 1492
+      11 NOVEMBER 7, 1776
+      12 JUNE 12, 1994
+      13 DECEMBER 6, 1991
+      14 MARCH 5, 1886
+Failed! [OVERFLOW]
+3 september 14 1998
+Attempting to PUSH SEPTEMBER 14, 1998 to stack 3...Sucessful!

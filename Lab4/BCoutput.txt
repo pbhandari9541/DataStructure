@@ -1,0 +1,44 @@
+-----C/B Output---------------
+insertion of Plattenberger...successfull
+insertion of Melkus       ...successfull
+insertion of Qamruddin    ...successfull
+insertion of Casper       ...successfull
+insertion of Aguirre      ...successfull
+insertion of Cook         ...successfull
+insertion of Vandort      ...successfull
+insertion of Keo          ...successfull
+Casper        293-6122     ..is found
+Using iterative method, Item does not exist.
+Inorder sequence starting from Cook(recursive):
+Cook          291-7890     , Keo           584-3622     ,
+insertion of Vickers      ...successfull
+insertion of Gunn         ...successfull
+insertion of Zulfiqar     ...successfull
+Inorder sequence starting from root(recursive):
+Aguirre       295-1882     , Casper        293-6122     , Cook          291-7890
+     , Gunn          294-1882     , Keo           584-3622     , Melkus        2
+91-1864     , Plattenberger 295-1492     , Qamruddin     295-1601     , Vandort
+      294-8075     , Vickers       294-1568     , Zulfiqar      295-6622     ,
+
+Deletion of Plattenberger...successfull
+Deletion of Cook         ...successfull
+Deletion of Aguirra      ...successfull
+insertion of Novac        ...successfull
+insertion of Ellington    ...successfull
+Inorder sequence starting from root(recursive):
+Casper        293-6122     , Ellington     295-1882     , Gunn          294-1882 
+    , Keo           584-3622     , Melkus        291-1864     , Novac         294
+-1666     , Qamruddin     295-1601     , Vandort       294-8075     , Vickers    
+  294-1568     , Zulfiqar      295-6622     ,
+
+Reverse Inorder sequence starting from root(recursive):
+Zulfiqar      295-6622     , Vickers       294-1568     , Vandort       294-8075
+     , Qamruddin     295-1601     , Novac         294-1666     , Melkus        29
+1-1864     , Keo           584-3622     , Gunn         294-1882     , Ellington   
+ 295-1882     , Casper        293-6122     , 
+
+Preorder sequence starting from root(iterative):
+Qamruddin     295-1601     , Melkus        291-1864     ,Casper        293-6122  
+   , Gunn         294-1882     , Ellington     295-1882     , Keo           584-36
+22     , Novac         294-1666     , Vandort       294-8075     , Zulfiqar      2
+95-6622     , Vickers       294-1568     ,

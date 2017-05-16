@@ -1,0 +1,214 @@
+V "GNAT Lib v2014"
+A -gnatwu
+A -gnat05
+A -mtune=generic
+A -march=pentiumpro
+P ZX
+
+RN
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTIONS
+RV NO_FLOATING_POINT
+RV NO_IO
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_UNCHECKED_ACCESS
+RV NO_UNCHECKED_CONVERSION
+RV NO_DEFAULT_INITIALIZATION
+RV NO_IMPLEMENTATION_ATTRIBUTES
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_OBSOLESCENT_FEATURES
+RV SPARK_05
+
+U hashtable%b		hashtable.adb		cc5aa2e0 NE OO PK GE KU
+W ada%s			ada.ads			ada.ali
+W ada.direct_io%s
+Z ada.io_exceptions%s	a-ioexce.ads		a-ioexce.ali
+W ada.numerics%s	a-numeri.ads		a-numeri.ali
+Z ada.numerics.aux%s	a-numaux.adb		a-numaux.ali
+W ada.numerics.generic_elementary_functions%s
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+Z ada.text_io.integer_aux%s  a-tiinau.adb	a-tiinau.ali
+W ada.text_io.integer_io%s
+W ada.unchecked_conversion%s
+Z interfaces%s		interfac.ads		interfac.ali
+Z interfaces.c_streams%s  i-cstrea.adb		i-cstrea.ali
+Z system%s		system.ads		system.ali
+Z system.crtl%s		s-crtl.ads		s-crtl.ali
+Z system.direct_io%s	s-direio.adb		s-direio.ali
+Z system.file_control_block%s  s-ficobl.ads	s-ficobl.ali
+Z system.file_io%s	s-fileio.adb		s-fileio.ali
+Z system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W unchecked_conversion%s
+
+U hashtable%s		hashtable.ads		4af1efd8 BN EE NE OO PK GE KU
+
+D ada.ads		20140406181354 3ffc8e18 ada%s
+D a-direio.ads		20140406181358 5842da07 ada.direct_io%s
+D a-direio.adb		20140406181358 ddb08ceb ada.direct_io%b
+D a-except.ads		20140406181356 43d57f8c ada.exceptions%s
+D a-finali.ads		20140406181358 69f99942 ada.finalization%s
+D a-ioexce.ads		20140406181358 e4a01f64 ada.io_exceptions%s
+D a-numeri.ads		20140406181358 bb51c45a ada.numerics%s
+D a-numaux.ads		20140406181356 243fe0b7 ada.numerics.aux%s
+D a-ngelfu.ads		20140406181358 ff061ca9 ada.numerics.generic_elementary_functions%s
+D a-ngelfu.adb		20140406181356 859ccdff ada.numerics.generic_elementary_functions%b
+D a-stream.ads		20140406181354 1a984740 ada.streams%s
+D a-tags.ads		20140406181356 dc4d0634 ada.tags%s
+D a-textio.ads		20140406181358 386df5d4 ada.text_io%s
+D a-tiinau.ads		20140406181356 8114c8e4 ada.text_io.integer_aux%s
+D a-tiinio.ads		20140406181358 aa04e5d6 ada.text_io.integer_io%s
+D a-tiinio.adb		20140406181356 df9cd7af ada.text_io.integer_io%b
+D a-unccon.ads		20140406181358 f9eb8f06 ada.unchecked_conversion%s
+D hashtable.ads		20150419125526 4af1efd8 hashtable%s
+D hashtable.adb		20150501032942 2a466f5c hashtable%b
+D interfac.ads		20140406181358 69adb1b9 interfaces%s
+D i-cstrea.ads		20140406181356 febc86ed interfaces.c_streams%s
+D system.ads		20140406181358 5fc8ae56 system%s
+D s-crtl.ads		20140406181356 2c012597 system.crtl%s
+D s-direio.ads		20140406181358 068812e8 system.direct_io%s
+D s-exctab.ads		20140406181354 54135002 system.exception_table%s
+D s-ficobl.ads		20140406181354 078245e4 system.file_control_block%s
+D s-fileio.ads		20140406181356 45ce2f0f system.file_io%s
+D s-finmas.ads		20140406181356 814daec4 system.finalization_masters%s
+D s-finroo.ads		20140406181358 4ff27390 system.finalization_root%s
+D s-parame.ads		20140406181358 06da98b2 system.parameters%s
+D s-pooglo.ads		20140406181356 542f33d0 system.pool_global%s
+D s-soflin.ads		20140406181358 aa763b52 system.soft_links%s
+D s-stache.ads		20140406181354 a37c21ec system.stack_checking%s
+D s-stalib.ads		20140406181354 fa0a3617 system.standard_library%s
+D s-stoele.ads		20140406181356 2dc34a04 system.storage_elements%s
+D s-stoele.adb		20140406181354 ed88f8fb system.storage_elements%b
+D s-stopoo.ads		20140406181356 b16154c2 system.storage_pools%s
+D s-traent.ads		20140406181354 b5116092 system.traceback_entries%s
+D s-unstyp.ads		20140406181356 510692af system.unsigned_types%s
+D s-wchcon.ads		20140406181358 1b7d22d2 system.wch_con%s
+D unchconv.ads		20140406181354 ca2f9e18 unchecked_conversion%s
+X 1 ada.ads
+16K9*Ada 19e8 19|7r6 8r6 9r6 11r6 15r23 16r27 17r24 29r29 257r28 257r63 260r10
+X 2 a-direio.ads
+43k13*Direct_IO 191e18 19|8w10 29r33
+53P9 File_Type<24|81P9> 19|33r24[29]
+55E9 File_Mode
+55n32 Inout_File{55E9[19|29]} 19|269r33[29]
+66I9 Count<integer> 19|82r42[29] 84r48[29] 97r45[29] 99r51[29] 125r42[29]
+. 129r56[29] 142r45[29] 146r59[29] 177r42[29] 195r45[29] 256r39[29] 271r44[29]
+68I12 Positive_Count{66I9[19|29]}
+74U14 Create 19|269s7[29]
+76e7 Mode{55E9[19|29]} 19|269r25[29]
+77a7 Name{string} 19|269r45[29]
+86U14 Close 19|267s10[29]
+95V13 Is_Open{boolean} 19|254s10[29] 266s10[29]
+101U14 Read 19|82s16[29] 97s19[29] 125s16[29] 142s19[29] 177s16[29] 195s19[29]
+. 256s13[29]
+110U14 Write 19|84s19[29] 99s22[29] 129s19[29] 146s22[29] 271s10[29]
+113i7 To{68I12[19|29]} 19|84r42[29] 99r45[29] 129r50[29] 146r53[29] 271r38[29]
+X 7 a-numeri.ads
+16K13*Numerics 32e17 19|9r10 17r28
+X 9 a-ngelfu.ads
+39k22*Generic_Elementary_Functions 154e46 19|9w19 17r37
+47V13 Log{float} 19|282s41[17] 282s73[17]
+X 13 a-textio.ads
+49K13*Text_IO 471e16 19|7w10 15r27 16r31 257r32 257r67 260r14
+242U14*Put 19|257s40
+263U14*Put_Line 19|257s75 260s22
+X 15 a-tiinio.ads
+46k21*Integer_IO 85e27 19|15r35 16r39
+66U14 Put 19|257s21[16]
+X 17 a-unccon.ads
+20v14*Unchecked_Conversion 19|11w10
+X 18 hashtable.ads
+10+8 Item 14r25 17r25 20r68 20r90 21r49 22r50 23r47 19|29r43 36r18 37r15
+. 54r62 54r84 66r43 71r16 108r47 113r16 155r44 162r16 252r16
+11i3 Table_Size{long_integer} 19|42r40 75r101 81r25 82r62 84r68 96r42 97r84
+. 99r90 119r103 124r25 125r62 129r76 141r42 142r84 146r98 170r103 175r25
+. 177r62 193r42 195r84 244r35 255r22 270r19 282r52
+14U18 Put 14>22 19|257s49
+14*22 X{10+8}
+17U18 Key 17>22 17<31 19|126s26 143s29 178s26 196s29
+17*22 X{10+8}
+17a31 Y{string}
+18k11*HashTable 10z8 11z3 14z18 17z18 31l8 31e17 19|12b14 126r16 143r19 178r16
+. 196r19 285l5 285t14
+20U17*Initialize 20>28 20>55 20>74 19|54b14 62l8 62t18
+20i28 Collisiontype{integer} 19|54b25 58r27
+20*55 Nullitem{10+8} 19|54b52 60r18
+20*74 Removeditem{10+8} 19|54b68 59r21
+21U17*Insert 21>24 21>40 19|66b14 106l8 106t14
+21a24 Key{string} 19|66b21 75r43 75r83
+21*40 Data{10+8} 19|66b34 84r36 99r39
+22U17*Remove 22>24 22<40 19|108b14 153l8 153t14
+22a24 Key{string} 19|108b21 119r45 119r85 127r29 144r32
+22*40 Data{10+8} 19|108b37 128m19 145m22
+23U17*Get 23>21 23<37 19|155b14 220l8 220t11
+23a21 Key{string} 19|155b18 170r45 170r85 179r29 197r32
+23*37 Data{10+8} 19|155b34 180m19 198m22
+24U17*GetMinProbes 24<30 19|222b14 225l8 225t20
+24i30 X{integer} 19|222b27 224m7
+25U17*GetMaxProbes 25<30 19|227b14 230l8 230t20
+25i30 X{integer} 19|227b27 229m7
+26U17*GetAvgProbes 26<30 19|232b14 235l8 235t20
+26f30 X{float} 19|232b27 234m7
+27U17*ResetStatistics 19|242b14 249l8 249t23
+28U17*PrintTable 19|251b14 262l8 262t18
+29U17*ResetTable 19|61s7 264b14 273l8 273t18
+30U17*SetCollisionHandler 30>37 19|58s7 277b14 284l8 284t27
+30i37 Collisiontype{integer} 19|277b34 280r23
+X 19 hashtable.adb
+14A9 St<string>(character)<integer> 21r57 22r61 23r9
+15K12 Iio[15|46] 15r60
+16K12 Long_IO[15|46] 257r13
+17K12 Math[9|39] 282r36 282r68
+21V13 StringToInteger[41|20]{long_integer} 75s22 75s62 119s24 119s64 170s24
+. 170s64
+22V13 Fold{14A9} 22b13 22>18 22>34 22>39 28l8 28t12 75s38 75s78 119s40 119s80
+. 170s40 170s80
+22a18 Str{string} 25r14 26r14
+22i34 Num{integer} 25r18
+22i39 Num2{integer} 26r18
+23a4 Tmp{14A9} 25m4 26m4 27r11
+29K12 AHashFile[2|43] 29r54 33r14
+32b4 Init{boolean} 57m7 73r10 117r10 167r10
+33p4 Hash_File{2|53P9[29]} 82r21 84r25 97r24 99r28 125r21 129r25 142r24 146r28
+. 177r21 195r24 254r18 256r18 266r18 267m16 267r16 269m14 269r14 271r16
+34i4 Collision_Type{integer} 80r13 123r13 174r13 280m7 281r10
+35i4 N{integer} 91r39 136r39 188r39 282m10
+36*4 Removed_Type{18|10+8} 59m7 83r54 98r57 129r36 146r39
+37*4 Null_Type{18|10+8} 60m7 83r30 98r33 271r27
+42i4 Minprobes{integer} 215r16 216m16 224r10 244m7
+43i4 Maxprobes{integer} 212r16 213m16 229r10 245m7
+44f4 Avgprobes{float} 210m13 234r10 246m7
+45i4 Lookups{integer} 168m10 168r19 210r52 247m7
+46i4 Totalprobes{integer} 209m13 209r27 210r31 239r10 248m7
+68i7 Hash{long_integer} 75m10 82r50 84r56 97r53 99r59
+69i7 Random{integer} 90m16 90r24 91m16 91r24 92r19 95r24
+70i7 Offset{integer} 95m16 96r32 97r71 99r77
+71*7 TempItem{18|10+8} 82m32 83r19 83r43 97m35 98r22 98r46
+81i17 I{long_integer} 82r55 84r61
+110i7 Hash{long_integer} 119m12 125r50 129r64 142r53 146r67
+111i7 Random{integer} 135m16 135r24 136m16 136r24 137r19 140r24
+112i7 Offset{integer} 140m16 141r32 142r71 146r85
+113*7 TempItem{18|10+8} 125m32 126r30 128r25 142m35 143r33 145r28
+114a7 Tempkey{string} 126m39 127r19 143m42 144r22
+124i17 I{long_integer} 125r55 129r69
+157i7 Hash{long_integer} 170m12 177r50 195r53
+158i7 Random{integer} 187m16 187r24 188m16 188r24 189r19 192r24
+159i7 Offset{integer} 192m16 193r32 195r71
+160i7 Probecnt{integer} 176m16 176r26 194m19 194r29 209r41 212r28 213r27
+. 215r28 216r27
+161b7 Found{boolean} 181m19 199m22 208r13
+162*7 TempItem{18|10+8} 177m32 178r30 180r25 195m35 196r33 198r28
+163a7 Tempkey{string} 178m39 179r19 196m42 197r22
+175i17 I{long_integer} 177r55
+237U14 GetTotalProbes 237b14 237<29 240l8 240t22
+237i29 X{integer} 239m7
+252*7 Tempitem{18|10+8} 256m29 257r53
+255i14 I{long_integer} 256r45 257r25
+270i11 I{long_integer} 271r50
+278i7 Temp{integer}
+X 24 s-direio.ads
+81P9*File_Type(53R9)
+X 41 unchconv.ads
+20v10*Unchecked_Conversion 19|10w6 21r36
+

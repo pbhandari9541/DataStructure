@@ -1,0 +1,284 @@
+
+GNAT GPL 2014 (20140331)
+Copyright 1992-2014, Free Software Foundation, Inc.
+
+
+Compiling: c:/users/pramesh/desktop/cosc33~1/lab1/aoption/program1.adb (source file time stamp: 2015-03-16 18:17:14)
+
+     1. --Parameshor Bhandari--CS3319 Data Structure--Lab 1
+     2. --02/27/2015--A Option code
+     3.
+     4. With Ada.Text_IO; Use Ada.Text_IO;
+     5. with Unchecked_Conversion;
+     6. with gStack;
+     7.
+     8. procedure Program1 is
+     9.    type DataType is (char, int, date, quit);
+    10.    type StackOption IS (Push, Pop, Quit);
+    11.    type MonthName IS (January, February, March, April, May, June, July, Agust,
+    12.                  September, October, November, December, Done);
+    13.    TYPE DateType is RECORD
+    14.       Month:MonthName;
+    15.       Day: Integer RANGE 1..31;
+    16.       Year:Integer;
+    17.    End record;
+    18.
+    19.    package MonthName_IO is New Ada.Text_IO.Enumeration_IO(MonthName); use MonthName_IO;
+    20.    Package StackOption_IO is New Ada.Text_IO.Enumeration_IO(StackOption);use StackOption_IO;
+    21.    package Data_IO is new Ada.Text_IO.Enumeration_IO(DataType); Use Data_IO;
+    22.    package MyInt_IO is New Ada.Text_IO.integer_IO(integer);use MyInt_IO;
+    23.
+    24.    function integerToCharacter is New Unchecked_Conversion(Integer,Character);
+           |
+        >>> warning: types for unchecked conversion have different sizes
+
+    25.    function characterToInteger is New Unchecked_Conversion(Character, Integer);
+           |
+        >>> warning: types for unchecked conversion have different sizes
+
+    26.
+    27.    StackSize:Integer;
+    28.    IntSize: Integer;
+           |
+        >>> warning: variable "IntSize" is read but never assigned
+
+    29.    DateSize: integer;
+           |
+        >>> warning: variable "DateSize" is read but never assigned
+
+    30.    stackType: DataType;
+    31.    StackChoice: StackOption;
+    32.
+    33.
+    34.
+    35.    Begin
+    36.       Put("Enter the size of the stack: ");
+    37.       Get(stackSize);
+    38.       Put_Line(" ");
+    39.
+    40.       While 1 = 1 Loop
+    41.          Put("Enter the data type for stack i.e char, int, date or quit: ");
+    42.          Get(stackType);
+    43.          New_Line;
+    44.
+    45.          case stackType is
+    46.             when char=>
+    47.
+    48.                Declare
+    49.                   inputChar: String(1..255);
+    50.                   charLength: Integer:=0;
+    51.                   tempChar: Character;
+    52.                   stackException: Boolean:= False;
+    53.
+    54.                   Package Character_Stack is New gStack(Character, stackSize); Use Character_Stack;
+    55.                Begin
+    56.                   While 1= 1 Loop
+    57.                      Put("Enter the type of the operation i.e push, pop or quit: ");
+    58.                      Get(stackChoice);
+    59.                      Case stackChoice is
+    60.                         WHEN Push =>
+    61.                            Put("");
+    62.                            Put("Enter Characters to push : ");
+    63.                            Skip_Line;
+    64.                            Get_Line(inputChar, charLength);    -- Recives character and character length
+    65.                            Put(inputChar(1..charLength));
+    66.                            Put("==>> Pushed") ;
+    67.                            Put_Line("");
+    68.
+    69.                            If charLength > 0 Then
+    70.                               For i in 1..charLength Loop
+    71.                                  push(inputChar(i),stackException);
+    72.                                  If stackException = True Then
+    73.                                     Put(" Stack is Full");
+    74.                                     Put_Line("");
+    75.                                     Exit;
+    76.                                  End if;
+    77.                               End Loop;
+    78.                            End If;
+    79.
+    80.                            If stackException = False Then
+    81.                               tempChar:= integerToCharacter(charLength);
+    82.                               push(tempChar, stackException);
+    83.                               If stackException = True Then
+    84.                                  Put("Stack is Full");
+    85.                                  put_Line("");
+    86.                               End If;
+    87.                            End If;
+    88.                         When pop =>
+    89.                            pop(tempChar, stackException);
+    90.                            If stackException = True Then
+    91.                               Put("Stack is Empty");
+    92.                               Put_Line(" ");
+    93.                            Else
+    94.                               charLength:= CharacterToInteger(TempChar);
+    95.                               put(charLength);
+    96.                               For i in 1..charLength loop
+    97.                                  pop(tempChar, stackException);
+    98.                                  If stackException = True Then
+    99.                                     Put("Stack is Empty");
+   100.
+   101.                                     Exit;
+   102.
+   103.                                  Else
+   104.                                     Put(tempChar);
+   105.                                  End If;
+   106.                               END LOOP;
+   107.                               Put_Line("");
+   108.                            End If;
+   109.                         When quit=>
+   110.                            Exit;
+   111.                         When Others =>
+   112.                            Null;
+   113.                      End Case;
+   114.                   End Loop;
+   115.                END;
+   116.
+   117.             WHEN int=>
+   118.
+   119.                Declare
+   120.                   count: Integer:=0;
+   121.                   tempInt: integer:=-1;
+   122.                   stackException: Boolean:= False;
+   123.
+   124.                   Package integer_Stack is New gStack(integer, stackSize); Use integer_Stack;
+   125.                 Begin
+   126.                   While 1= 1 Loop
+   127.                      Put("Enter the type of the operation i.e push, pop or quit: ");
+   128.                      Get(stackChoice);
+   129.                      Case stackChoice is
+   130.                         WHEN Push =>
+   131.                             Put("Enter integer separated by space or 0 to terminate :  ");
+   132.                             Put_line("");
+   133.                             count :=0;
+   134.                             WHILE 1=1 LOOP
+   135.                                get(tempInt);
+   136.                                IF Count = 0 THEN
+   137.                                   Put("Pushing..");
+   138.                                END IF;
+   139.                                Put(tempInt,0);Put(" ");
+   140.                                IF tempInt = 0 THEN
+   141.                                   IF Count /=0 THEN
+   142.                                      Push(Count, stackException);
+   143.                                      IF stackException = true THEN
+   144.                                         Put_Line("Stack is full");
+   145.                                         put_Line("");
+   146.                                      END IF;
+   147.                                      Exit;
+   148.                                    End if;
+   149.                                END IF;
+   150.                                Push(TempInt, stackException);
+   151.                                IF stackException = true THEN
+   152.                                   Put_Line("Stack is Full!!");
+   153.                                   EXIT;
+   154.                                END IF;
+   155.                                Count := Count + 1;
+   156.                             END LOOP;
+   157.                             Put_Line("");
+   158.
+   159.                         When pop =>
+   160.                            pop(count, stackException);
+   161.                            If stackException = True Then
+   162.                                Put("Stack is Empty");
+   163.                                Put_Line(" ");
+   164.                             ELSE
+   165.                                Put(Count); Put(", ");
+   166.                                FOR i in 1..Count LOOP
+   167.                                   Pop(tempInt,stackException);
+   168.                                   IF stackException = True THEN
+   169.                                      Put_Line("Stack is Empty");
+   170.                                      EXIT;
+   171.                                   ELSE
+   172.                                      Put(tempInt,0); Put(",  ");
+   173.                                   END IF;
+   174.                                END LOOP;
+   175.                                Put_Line("");
+   176.                            End If;
+   177.                         When quit=>
+   178.                            Exit;
+   179.                         When Others =>
+   180.                            Null;
+   181.                      End Case;
+   182.                   End Loop;
+   183.                 END;
+   184.
+   185.             When date=>
+   186.                 DECLARE
+   187.                    TempMonth: MonthName;
+   188.                    TempDay: Integer;
+   189.                    TempYear:Integer;
+   190.                    TempDate:DateType;
+   191.                    Count:integer:=0;
+   192.                    StackException:Boolean;
+   193.
+   194.                    PACKAGE Count_Stack IS NEW GStack(Integer, IntSize);
+   195.                    PACKAGE Date_Stack IS NEW GStack(DateType, DateSize);
+   196.                 BEGIN
+   197.                    WHILE 1=1 LOOP
+   198.                       Put("Date: push, pop, or quit: ");
+   199.                       Get(StackChoice);
+   200.                       CASE StackChoice IS
+   201.                       WHEN Push=>
+   202.                          Put_Line("Enter date as Month day year or 'Done' for termination");
+   203.                          Put("Month day year==> ");
+   204.                          count:=0;
+   205.
+   206.                          WHILE 1=1 LOOP
+   207.                             Get(TempMonth);
+   208.                             if TempMonth = Done then
+   209.                                Count_Stack.Push(Count,StackException);
+   210.                                IF StackException = True THEN
+   211.                                   Put_Line("stack is full");
+   212.                                   put_Line("");
+   213.                                End if;
+   214.                                Exit;
+   215.                             END IF;
+   216.                             Get(TempDay);
+   217.                             get(TempYear);
+   218.                             TempDate:=(TempMonth,TempDay,TempYear);
+   219.                             Date_Stack.push(TempDate,stackException);
+   220.                             IF StackException = True THEN
+   221.                                Put_Line("stack is full");
+   222.                                Exit;
+   223.                             End if;
+   224.                             count := count + 1;
+   225.                          END LOOP;
+   226.                       WHEN Pop =>
+   227.                          Count_Stack.pop(count,stackException);
+   228.                          if stackException = true then
+   229.                                Put_Line("stack is Empty");
+   230.                                put_Line(" ");
+   231.                          ELSE
+   232.                             Put(count); Put(": ");
+   233.                             for i in 1..count loop
+   234.                                Date_Stack.pop(TempDate,stackException);
+   235.                                if stackException = True then
+   236.                                   Put_Line("stack is empty");
+   237.                                   Exit;
+   238.                                END IF;
+   239.                                Put(TempDate.Month);
+   240.                                put(" ");
+   241.                                Put(TempDate.Day,3);
+   242.                                put(" ");
+   243.                                Put(TempDate.Year,0);
+   244.                                put(" ");
+   245.                            End Loop;
+   246.                            Put_Line(" ");
+   247.                          End if;
+   248.                      WHEN quit=>
+   249.                         Exit;
+   250.                      WHEN others =>
+   251.                         Null;
+   252.                   End case;
+   253.                 End Loop;
+   254.               END;
+   255.
+   256.             WHEN Quit =>
+   257.
+   258.                Exit;
+   259.             When Others =>
+   260.                Null;
+   261.          End Case;
+   262.        END LOOP;
+   263.    End Program1;
+
+ 263 lines: No errors, 4 warnings

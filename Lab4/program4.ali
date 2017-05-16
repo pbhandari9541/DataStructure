@@ -1,0 +1,109 @@
+V "GNAT Lib v2014"
+M P W=b
+A -gnatwu
+A -gnat05
+A -mtune=generic
+A -march=pentiumpro
+P ZX
+
+RN
+RV NO_ALLOCATORS
+RV NO_IO
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_LOCAL_ALLOCATORS
+RV NO_RECURSION
+RV NO_STANDARD_ALLOCATORS_AFTER_ELABORATION
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV SPARK_05
+
+U program4%b		program4.adb		b6bc9771 NE OO SU KU
+W ada%s			ada.ads			ada.ali
+Z ada.numerics%s	a-numeri.ads		a-numeri.ali
+Z ada.numerics.generic_elementary_functions%s
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+Z ada.unchecked_deallocation%s
+W binarysearchtree%s	binarysearchtree.adb	binarysearchtree.ali
+W system%s		system.ads		system.ali
+W system.compare_array_unsigned_8%s  s-carun8.adb  s-carun8.ali
+
+D ada.ads		20140406181354 3ffc8e18 ada%s
+D a-except.ads		20140406181356 43d57f8c ada.exceptions%s
+D a-finali.ads		20140406181358 69f99942 ada.finalization%s
+D a-ioexce.ads		20140406181358 e4a01f64 ada.io_exceptions%s
+D a-numeri.ads		20140406181358 bb51c45a ada.numerics%s
+D a-ngelfu.ads		20140406181358 ff061ca9 ada.numerics.generic_elementary_functions%s
+D a-stream.ads		20140406181354 1a984740 ada.streams%s
+D a-tags.ads		20140406181356 dc4d0634 ada.tags%s
+D a-textio.ads		20140406181358 386df5d4 ada.text_io%s
+D a-unccon.ads		20140406181358 f9eb8f06 ada.unchecked_conversion%s
+D a-uncdea.ads		20140406181358 f15a5ed1 ada.unchecked_deallocation%s
+D binarysearchtree.ads	20150426161710 7eb9b42a binarysearchtree%s
+D binarysearchtree.adb	20150427224706 9d4b0ed4 binarysearchtree%b
+D interfac.ads		20140406181358 69adb1b9 interfaces%s
+D i-cstrea.ads		20140406181356 febc86ed interfaces.c_streams%s
+D program4.adb		20150428005444 f068d68f program4%b
+D system.ads		20140406181358 5fc8ae56 system%s
+D s-carun8.ads		20140406181356 a903718d system.compare_array_unsigned_8%s
+D s-crtl.ads		20140406181356 2c012597 system.crtl%s
+D s-exctab.ads		20140406181354 54135002 system.exception_table%s
+D s-ficobl.ads		20140406181354 078245e4 system.file_control_block%s
+D s-finmas.ads		20140406181356 814daec4 system.finalization_masters%s
+D s-finroo.ads		20140406181358 4ff27390 system.finalization_root%s
+D s-parame.ads		20140406181358 06da98b2 system.parameters%s
+D s-pooglo.ads		20140406181356 542f33d0 system.pool_global%s
+D s-soflin.ads		20140406181358 aa763b52 system.soft_links%s
+D s-stache.ads		20140406181354 a37c21ec system.stack_checking%s
+D s-stalib.ads		20140406181354 fa0a3617 system.standard_library%s
+D s-stoele.ads		20140406181356 2dc34a04 system.storage_elements%s
+D s-stoele.adb		20140406181354 ed88f8fb system.storage_elements%b
+D s-stopoo.ads		20140406181356 b16154c2 system.storage_pools%s
+D s-traent.ads		20140406181354 b5116092 system.traceback_entries%s
+D s-unstyp.ads		20140406181356 510692af system.unsigned_types%s
+D s-wchcon.ads		20140406181358 1b7d22d2 system.wch_con%s
+X 1 ada.ads
+16K9*Ada 19e8 16|7r6 7r23
+X 9 a-textio.ads
+49K13*Text_IO 471e16 16|7w10 7r27
+242U14*Put 16|25s7 25s30 25s39 66s69 66s90 67s69 67s90 68s69 68s90 69s69
+. 69s90 70s69 70s90 71s69 71s90 72s69 72s90 73s69 73s90 99s69 99s90 100s69
+. 100s90 101s69 101s90 110s69 110s90 111s69 111s90
+263U14*Put_Line 16|66s116 67s116 68s116 69s116 70s116 71s116 72s116 73s116
+. 77s34 88s34 96s7 97s35 99s116 100s116 101s116 103s7 104s18 104s32 105s7
+. 110s116 111s116 113s7 114s18 114s32 116s7 117s23 117s37 119s7
+X 12 binarysearchtree.ads
+18k12*BinarySearchTree 44e24 16|8w6 58r4
+21U17 Insert 16|66s53[57] 67s53[57] 68s53[57] 69s53[57] 70s53[57] 71s53[57]
+. 72s53[57] 73s53[57] 99s53[57] 100s53[57] 101s53[57] 110s53[57] 111s53[57]
+24U17 Find_I 16|75s7[57] 86s7[57]
+31U17 InOrder_R 16|104s7[57] 114s7[57]
+32U17 InOrder_R 16|97s7[57]
+33U17 ReverseOrder_R 16|117s7[57]
+X 16 program4.adb
+10U11*Program4 10b11 125l5 125t13
+12A9 String13(character)<integer> 14r16 15r23 18r51 30r26 39r26 48r26 58r21
+13R9 Customer 16e17 18r34 23r37 30r45 39r45 48r45 58r30 62r16
+14a10 Name{12A9} 20r19 25r23 32r22 41r22 50r22 66r109 67r109 68r109 69r109
+. 70r109 71r109 72r109 73r109 99r109 100r109 101r109 110r109 111r109
+15a10 PhoneNumber{12A9} 25r55
+18V13 CustomerKey{12A9} 18b13 18>25 21l8 21t19 58r39
+18r25 Cust{13R9} 20r14
+23U14 CustomerPrint 23b14 23>28 27l8 27t21 58r51 77s10 88s10
+23r28 Cust{13R9} 25r18 25r50
+30V14 "<"{boolean} 30b14 30>17 30>36 37l9 37t11 58r66
+30a17 Name{12A9} 32r10
+30r36 Cust{13R9} 32r17
+39V14 ">"{boolean} 39b14 39>17 39>36 46l9 46t11 58r70
+39a17 Name{12A9} 41r10
+39r36 Cust{13R9} 41r17
+48V14 "="{boolean} 48b14 48>17 48>36 55l9 55t11 58r74
+48a17 Name{12A9} 50r10
+48r36 Cust{13R9} 50r17
+57K12 BinaryThreadTree[12|18] 58r83
+62r7 CurCust{13R9} 66m7 66r60 66r101 67m7 67r60 67r101 68m7 68r60 68r101
+. 69m7 69r60 69r101 70m7 70r60 70r101 71m7 71r60 71r101 72m7 72r60 72r101
+. 73m7 73r60 73r101 75m31 77r24 86m31 88r24 99m7 99r60 99r101 100m7 100r60
+. 100r101 101m7 101r60 101r101 110m7 110r60 110r101 111m7 111r60 111r101
+63b7 Failed{boolean} 75m40 76r10 86m40 87r10
+

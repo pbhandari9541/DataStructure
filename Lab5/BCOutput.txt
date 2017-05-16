@@ -1,0 +1,31 @@
+Santosh Limbu
+Lab_4_C/B_Output
+Using iterative method, Item does not exist.
+Using recursive method, Item does not exist.
+Buck       295-1882
+Buck       295-1882
+Inorder sequence starting from Vanek(recursive):
+Sewell     584-3622  , Vanek      295-1601  , Hall       293-6122  ,
+Inorder sequence starting from root(recursive):
+Buck       295-1882  , Buck       294-1882  , Sewell     295-1492  , Sewell
+584-3622  , Vanek      295-1601  , Hall       293-6122  , Lee        291-1864  ,
+ Montes     295-6622  , Rios       291-7890  , Morgan     294-8075  , Sodmann
+ 294-1568  ,
+
+Inorder sequence starting from root(recursive):
+Caldwell   294-1666  , Buck       295-1882  , Buck       294-1882  , Sewell
+295-1492  , Sewell     584-3622  , Vanek      295-1601  , Hall       293-6122  ,
+ Buck       295-1882  , Lee        291-1864  , Montes     295-6622  , Rios
+ 291-7890  , Morgan     294-8075  , Sodmann    294-1568  ,
+
+Reverse Inorder sequence starting from root(recursive):
+Sodmann    294-1568  , Morgan     294-8075  , Rios       291-7890  , Montes
+295-6622  , Lee        291-1864  , Buck       295-1882  , Hall       293-6122  ,
+ Vanek      295-1601  , Sewell     584-3622  , Sewell     295-1492  , Buck
+ 294-1882  , Buck       295-1882  , Caldwell   294-1666  ,
+
+Preorder sequence starting from root(iterative):
+Sewell     295-1492  , Buck       295-1882  , Caldwell   294-1666  , Buck
+294-1882  , Lee        291-1864  , Vanek      295-1601  , Sewell    584-3622  ,
+ Hall       293-6122  , Buck       295-1882  , Rios       291-7890  , Montes
+ 295-6622  , Morgan     294-8075  , Sodmann    294-1568  ,

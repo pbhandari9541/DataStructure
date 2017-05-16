@@ -1,0 +1,123 @@
+with Ada.Text_IO; use Ada.Text_IO;
+with Unchecked_Conversion;
+with Stack;
+
+procedure Program1 is 
+   type DataType is (character, integer, date, quit);
+   type StackOption is (push, pop, quit);
+   
+   package DataType_IO is New Ada.Text_IO.Enumeration_IO(DataType); use DataType_IO;
+   package StackOption_IO is New Ada.Text_IO.Enumeration_IO(StackOption);use StackOption_IO;
+   package MyInt_IO is new Ada.Text_IO.Integer_IO(Integer);use MyInt_IO;
+   
+   function integerToCharacter is New Unchecked_Conversion(Integer,Character);
+   function characterToInteger is New Unchecked_Conversion(Character, Integer);
+   
+   stackSize: Integer;
+   stackType: DataType;
+   stackChoice: StackOption;
+   
+   Begin
+      Put("Enter the size of the stack: ");
+      Get(stackSize);
+      New_Line("");
+      
+      While 1 = 1 Loop
+         Put("Enter the data type for stack i.e character, integer, date or quit: ");
+         Get(stackType);
+         New_Line;
+         
+         case stackType is 
+            when character =>
+                     
+               Declare
+                  inputChar: String(1..255);
+                  charLength: Integer:=0;
+                  tempChar: Character;
+                  stackException: Boolean:= False;
+                           
+                  Package Character_Stack is New Stack(Character, stackSize); Use Character_Stack;
+               Begin
+                  While 1= 1 Loop
+                     Put("Enter the type of the operation i.e push, pop or quit");
+                     Get(stackChoice);
+                     Case stackChoice is 
+                        When push =>
+                           Put(" Enter Characters to push : ");
+                           New_Line;
+                           Get_Line(inputChar, charLength);    -- Recives character and character length
+                           Put(inputChar(1..charLength);
+                           Put("==>> Pushed") ;
+                                              
+                           If charLength > 0 Then
+                              For i in 1..charLength Loop
+                                 push(inputChar(i),stackException);
+                                 If stackException = True Then
+                                    Put(" Stack is Full");
+                                    Exit;
+                                 End if;
+                              End Loop;
+                           End If;
+                              
+                           If stackExeption = False Then
+                              tempChar:= integerToCharacter(charLength);
+                              push(tempoChar, stackException);
+                              If stackException = True Then
+                                 Put("Stack is Full");
+                                 Exit;
+                              End If;
+                           End If;
+                        When pop =>
+                           pop(tempChar, stackException);
+                           If stackException = True Then
+                              Put("Stack is Empty");
+                           Else
+                              charLength:= characterToInteger(tempChar);
+                              For i in 1..charLnegth loop
+                                 pop(tempChar, stackException);
+                                 If stackException = True Then
+                                    Put("Stack is Empty");
+                                 Else
+                                    Put(tempChar);
+                                 End If;
+                              End Loop;
+                           End If;
+                        When quit=>
+                           Exit;
+                        When Others 
+                           Null;
+                     End Case;
+                  End Loop;
+               End;
+            When quit =>
+               Exit;
+            When Others =>
+               Null;
+               
+         End Case;
+      End Loop;
+   End Program1;
+                                           
+                                        
+                                                               
+                                                          
+                                                                   
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+         
+               
+      
+      
+   
+   
+   
+   

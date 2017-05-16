@@ -1,0 +1,28 @@
+
+insertion ofPlattenberger...successfull
+insertion ofMelkus       ...successfull
+insertion ofQamruddin    ...successfull
+insertion ofCasper       ...successfull
+insertion ofAguirre      ...successfull
+insertion ofCook         ...successfull
+insertion ofVandort      ...successfull
+insertion ofKeo          ...successfull
+Casper        293-6122     ..is found
+Casper        293-6122     ..is found
+Using iterative method, Item does not exist.
+Using recursive method, Item does not exist.
+Inorder sequence starting from Cook(recursive):
+Cook          291-7890     , Keo           584-3622     ,
+insertion ofVickers      ...successfull
+insertion ofGunn         ...successfull
+insertion ofZulfiqar     ...successfull
+Inorder sequence starting from root(recursive):
+Aguirre       295-1882     , Casper        293-6122     , Cook          291-7890
+     , Gunn          294-1882     , Gunn          294-1882     , Keo           5
+84-3622     , Melkus        291-1864     , Plattenberger 295-1492     , Qamruddi
+n     295-1601     , Vandort       294-8075     , Vickers       294-1568     , V
+ickers       294-1568     , Zulfiqar      295-6622     , Zulfiqar      295-6622
+    ,
+
+
+

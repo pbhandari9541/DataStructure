@@ -1,0 +1,16 @@
+WITH Ada.Text_I_O; USE Ada.Text_IO;
+PACKAGE BODY GenericTopologicalSort IS
+   PACKAGE MyInt_IO IS NEW Ada.Text_IO.Integer_IO(Integer); USE MyInt_IO;
+   TYPE Node;
+   TYPE NodePointer IS ACCESS Node;
+   TYPE Node IS TAGGED RECORD
+      Suc: SortElement;
+      Next: NodePointer;
+   END RECORD;
+
+   TYPE JobElement IS RECORD
+      Count:Integer :=0;
+      Top: NodePointer;
+   END RECORD;
+
+   SortStructure: Array(SortElement) of JobElement;

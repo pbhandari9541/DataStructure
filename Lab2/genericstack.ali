@@ -1,0 +1,136 @@
+V "GNAT Lib v2014"
+A -gnatwu
+A -gnat05
+A -mtune=generic
+A -march=pentiumpro
+P ZX
+
+RN
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTIONS
+RV NO_FLOATING_POINT
+RV NO_IO
+RV SPARK_05
+
+U genericstack%b	genericstack.adb	1843c5fc NE OO PK GE KU
+W ada%s			ada.ads			ada.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+Z ada.text_io.float_aux%s  a-tiflau.adb		a-tiflau.ali
+W ada.text_io.float_io%s
+Z ada.text_io.integer_aux%s  a-tiinau.adb	a-tiinau.ali
+W ada.text_io.integer_io%s
+
+U genericstack%s	genericstack.ads	55d251dd BN EE NE OO PK GE KU
+
+D ada.ads		20140406181354 3ffc8e18 ada%s
+D a-except.ads		20140406181356 43d57f8c ada.exceptions%s
+D a-finali.ads		20140406181358 69f99942 ada.finalization%s
+D a-ioexce.ads		20140406181358 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20140406181354 1a984740 ada.streams%s
+D a-tags.ads		20140406181356 dc4d0634 ada.tags%s
+D a-textio.ads		20140406181358 386df5d4 ada.text_io%s
+D a-tiflau.ads		20140406181356 c0393f21 ada.text_io.float_aux%s
+D a-tiflio.ads		20140406181358 56fbda09 ada.text_io.float_io%s
+D a-tiflio.adb		20140406181356 fd9b1cfc ada.text_io.float_io%b
+D a-tiinau.ads		20140406181356 8114c8e4 ada.text_io.integer_aux%s
+D a-tiinio.ads		20140406181358 aa04e5d6 ada.text_io.integer_io%s
+D a-tiinio.adb		20140406181356 df9cd7af ada.text_io.integer_io%b
+D a-unccon.ads		20140406181358 f9eb8f06 ada.unchecked_conversion%s
+D genericstack.ads	20150320051134 55d251dd genericstack%s
+D genericstack.adb	20150411194440 75fc61f5 genericstack%b
+D interfac.ads		20140406181358 69adb1b9 interfaces%s
+D i-cstrea.ads		20140406181356 febc86ed interfaces.c_streams%s
+D system.ads		20140406181358 5fc8ae56 system%s
+D s-crtl.ads		20140406181356 2c012597 system.crtl%s
+D s-exctab.ads		20140406181354 54135002 system.exception_table%s
+D s-ficobl.ads		20140406181354 078245e4 system.file_control_block%s
+D s-finmas.ads		20140406181356 814daec4 system.finalization_masters%s
+D s-finroo.ads		20140406181358 4ff27390 system.finalization_root%s
+D s-parame.ads		20140406181358 06da98b2 system.parameters%s
+D s-pooglo.ads		20140406181356 542f33d0 system.pool_global%s
+D s-soflin.ads		20140406181358 aa763b52 system.soft_links%s
+D s-stache.ads		20140406181354 a37c21ec system.stack_checking%s
+D s-stalib.ads		20140406181354 fa0a3617 system.standard_library%s
+D s-stoele.ads		20140406181356 2dc34a04 system.storage_elements%s
+D s-stoele.adb		20140406181354 ed88f8fb system.storage_elements%b
+D s-stopoo.ads		20140406181356 b16154c2 system.storage_pools%s
+D s-traent.ads		20140406181354 b5116092 system.traceback_entries%s
+D s-unstyp.ads		20140406181356 510692af system.unsigned_types%s
+D s-wchcon.ads		20140406181358 1b7d22d2 system.wch_con%s
+X 1 ada.ads
+16K9*Ada 19e8 16|7r6 7r23 13r23 14r23
+X 7 a-textio.ads
+49K13*Text_IO 471e16 16|7w10 7r27 13r27 14r27
+242U14*Put 16|164s10 166s13 166s36 174s7 176s25 178s7 180s24 182s7 184s27
+263U14*Put_Line 16|30s10 33s10 37s13 43s13 98s10 162s7 164s36 166s64 186s7
+X 9 a-tiflio.ads
+46k21*Float_IO 89e25 16|14r35
+X 12 a-tiinio.ads
+46k21*Integer_IO 85e27 16|13r35
+66U14 Put 16|164s27[13] 166s27[13] 176s10[13] 180s10[13] 184s10[13]
+X 15 genericstack.ads
+6i4 LeftBound{integer} 16|17r22
+7i4 RightBound{integer} 16|17r33
+8i4 L0{integer} 16|191r91 195r33
+9i4 Size{integer} 16|22r55 84r21 191r80 195r27
+10i4 NumStacks{positive} 16|18r20 19r21 20r18 84r47 102r61 110r22 121r22
+. 133r22 146r22 163r19 175r20 179r19 183r19 190r16 191r60 195r9
+11+9 Item 12r26 16r28 17r28 16|17r48 24r25 57r25
+12U19 Put 12>23 16|166s45
+12*23 X{11+9}
+14k12*GenericStack 6z4 7z4 8z4 9z4 10z4 11z9 12z19 22l8 22e20 16|10b14 196l5
+. 196t17
+16U17*Push 16>22 16>34 16<52 16|24b14 54l8 54t12
+16*22 X{11+9} 16|24b19 46r37 51r34
+16i34 Stk{positive} 16|24b31 27r11 27r23 28r14 28r26 34r17 39r17 39r29 46r28
+. 51r25
+16b52 Exception_Result{boolean} 16|24b49 34m22 36r13 52m10
+17U17*Pop 17<21 17>34 17<52 16|57b14 67l8 67t11
+17*21 X{11+9} 16|57b18 63m10
+17i34 Stk{positive} 16|57b31 60r14 60r26 63r30 64r14 64r26
+17b52 Exception_Result{boolean} 16|57b49 61m10 65m10
+18U17*Repack 18>24 18<47 16|34s10 69b14 151l8 151t14
+18i24 CurStack{positive} 16|69b21 117r14 117r31 144r14 144r31
+18b47 Exception_Repack{boolean} 16|69b44 99m10 149m10
+19U17*SetMinSpace 19>29 16|153b14 157l8 157t19
+19i29 Min{positive} 16|153b26 156r17
+20U17*PrintContents 16|32s10 41s13 47s13 159b14 169l8 169t21
+21U17*PrintTopsAndBottoms 16|31s10 40s13 44s13 171b14 187l8 187t27
+X 16 genericstack.adb
+13K12 Iio[12|46] 13r60
+14K12 Fio[9|46] 14r56
+17a4 StackSpace(15|11+9) 46m13 51m10 63r15 125m19 125r45 137m19 137r45 166r49
+18a4 Base(integer) 28r21 60r21 86r47 109r23 113r64 122r28 123r26 124r26 127m16
+. 134r28 135r38 136r34 139m16 165r20 176r14 191m7 192r17 195m4
+19a4 OldTop(integer) 87r22 88m13 88r34 89r36 91m13 108r15 109m10 112r18 113m13
+. 113r42 122r16 123r36 127r27 134r16 135r26 139r27 147m13 184r14 193m7
+20a4 Top(integer) 27m7 27r19 28r10 39m13 39r25 46r24 51r21 60r10 63r26 64m10
+. 64r22 86r38 87r13 88r25 113r55 117m10 117r27 124r38 128m16 128r26 136r46
+. 140m16 140r26 144m10 144r27 147r26 165r32 180r14 192m7 193r20
+22i4 MinSpace{integer} 97r24 156m7
+71f7 EqualAllocate{float} 72r35 102r19
+72f7 GrowthAllocate{float} 105r18
+73i7 AvailSpace{integer} 84m7 86m10 86r24 97r10 102r41 105r42
+74i7 TotalInc{integer} 84m27 89m13 89r25 105r62
+75i7 J{integer} 84m42 85r13 86r42 86r52 87r17 87r29 88r20 88r29 88r41 89r43
+. 91r20 93m10 93r15 108m10 111r43 112m13
+76f7 Alpha{float} 102m10 111r28
+76f20 Beta{float} 105m10 111r48
+77f7 Sigma{float} 111r20 113r110 114m13
+78f7 Tau{float} 111m13 113r91 114r22
+79i7 Delta1{integer} 123m16 125r34 128r35 135m16 137r34 140r35
+110i14 K{integer} 112r25 113r20 113r49 113r59 113r69
+121i14 J{integer} 122r23 122r33 123r31 123r43 124r31 124r42 127r21 127r34
+. 128r20 128r30
+124i20 L{integer} 125r30 125r56
+133i14 J{integer} 134r23 134r33 135r33 135r43 136r39 136r50 139r21 139r34
+. 140r20 140r30
+136i20 L{integer} 137r30 137r56
+146i14 J{integer} 147r20 147r30
+163i11 I{integer} 164r31 165r25 165r36
+165i14 J{integer} 166r31 166r60
+175i11 I{integer} 176r19
+179i11 I{integer} 180r18
+183i11 I{integer} 184r21
+190i8 J{integer} 191r12 191r45 192r11 192r22 193r14 193r24
+
